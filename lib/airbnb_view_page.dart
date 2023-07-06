@@ -1,9 +1,18 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:prototype/my_app_bar.dart';
-import 'package:prototype/static_data.dart';
 
 class AirbnbViewPage extends StatefulWidget {
+  String airbnbName;
+  String airbnbLocation;
+  String airbnbPrice;
+  String airbnbImage;
+  AirbnbViewPage({
+    required this.airbnbName,
+    required this.airbnbLocation,
+    required this.airbnbPrice,
+    required this.airbnbImage,
+  });
+
   @override
   State<AirbnbViewPage> createState() => _AirbnbViewPageState();
 }
@@ -18,57 +27,57 @@ class _AirbnbViewPageState extends State<AirbnbViewPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CarouselSlider(
-              items: imageList.map((image) {
-                return Container(
-                  // margin: EdgeInsets.all(8.0),
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage(image),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                );
-              }).toList(),
-              options: CarouselOptions(
-                height: 250.0,
-                autoPlay: true,
-                enlargeCenterPage: true,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    _currentSlide = index;
-                  });
-                },
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: imageList.map((image) {
-                int index = imageList.indexOf(image);
-                return Container(
-                  width: 8.0,
-                  height: 8.0,
-                  margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 4.0),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: _currentSlide == index ? Colors.blue : Colors.grey,
-                  ),
-                );
-              }).toList(),
-            ),
-            // Image.network(
-            //   'https://images.pexels.com/photos/1428348/pexels-photo-1428348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            //   fit: BoxFit.cover,
-            //   height: 200,
-            //   width: double.infinity,
+            // CarouselSlider(
+            //   items: airbnbImageList.take(5).map((image) {
+            //     return Container(
+            //       // margin: EdgeInsets.all(8.0),
+            //       decoration: BoxDecoration(
+            //         image: DecorationImage(
+            //           image: NetworkImage(widget.airbnbImage),
+            //           fit: BoxFit.cover,
+            //         ),
+            //       ),
+            //     );
+            //   }).toList(),
+            //   options: CarouselOptions(
+            //     height: 250.0,
+            //     autoPlay: true,
+            //     enlargeCenterPage: true,
+            //     onPageChanged: (index, reason) {
+            //       setState(() {
+            //         _currentSlide = index;
+            //       });
+            //     },
+            //   ),
             // ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: airbnbImageList.map((image) {
+            //     int index = airbnbImageList.indexOf(image);
+            //     return Container(
+            //       width: 8.0,
+            //       height: 8.0,
+            //       margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 4.0),
+            //       decoration: BoxDecoration(
+            //         shape: BoxShape.circle,
+            //         color: _currentSlide == index ? Colors.blue : Colors.grey,
+            //       ),
+            //     );
+            //   }).toList(),
+            // ),
+            Image.network(
+              widget.airbnbImage,
+              fit: BoxFit.cover,
+              height: 200,
+              width: double.infinity,
+            ),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Beautiful Villa',
+                  Text(
+                    widget.airbnbName,
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -76,7 +85,7 @@ class _AirbnbViewPageState extends State<AirbnbViewPage> {
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    'Nairobi, Kenya',
+                    '${widget.airbnbLocation}, Kenya',
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.grey[600],
@@ -140,8 +149,8 @@ Whether you're seeking a romantic getaway or a fun-filled family vacation, our b
                     ),
                   ),
                   const SizedBox(height: 10),
-                  const Text(
-                    '\$200 per night',
+                  Text(
+                    'Kshs ${widget.airbnbPrice} per night',
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.green,

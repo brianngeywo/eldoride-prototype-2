@@ -196,32 +196,32 @@ class MainSettingsScreen extends StatelessWidget {
               );
             },
           ),
-          ListTile(
-            leading: const Icon(
-              Icons.privacy_tip,
-              color: Colors.black,
-            ),
-            title: const Text(
-              'Privacy Settings',
-              style: TextStyle(
-                color: Colors.black,
-              ),
-            ),
-            trailing: const Icon(
-              Icons.arrow_forward_ios_rounded,
-              size: 14.0,
-              color: Colors.black,
-            ),
-            onTap: () {
-              // Navigate to the privacy settings screen
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => PrivacySettingsScreen(),
-                ),
-              );
-            },
-          ),
+          // ListTile(
+          //   leading: const Icon(
+          //     Icons.privacy_tip,
+          //     color: Colors.black,
+          //   ),
+          //   title: const Text(
+          //     'Privacy Settings',
+          //     style: TextStyle(
+          //       color: Colors.black,
+          //     ),
+          //   ),
+          //   trailing: const Icon(
+          //     Icons.arrow_forward_ios_rounded,
+          //     size: 14.0,
+          //     color: Colors.black,
+          //   ),
+          //   onTap: () {
+          //     // Navigate to the privacy settings screen
+          //     Navigator.push(
+          //       context,
+          //       MaterialPageRoute(
+          //         builder: (context) => PrivacySettingsScreen(),
+          //       ),
+          //     );
+          //   },
+          // ),
           // Add more list tiles for additional settings
         ],
       ),

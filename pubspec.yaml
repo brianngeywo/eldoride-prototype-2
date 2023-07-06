@@ -40,6 +40,7 @@ dependencies:
   simple_icons: ^7.10.0
   remixicon: ^1.0.0
   carousel_slider: ^4.2.1
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:

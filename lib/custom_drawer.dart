@@ -3,8 +3,9 @@ import 'package:prototype/homescreen.dart';
 import 'package:prototype/main_profile_page.dart';
 import 'package:prototype/main_settings_screen.dart';
 import 'package:prototype/my_rides_history.dart';
-import 'package:prototype/notification_settings_page.dart';
+import 'package:prototype/notifications_screen.dart';
 import 'package:prototype/payment_screen.dart';
+import 'package:prototype/recent_locations.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
@@ -20,8 +21,7 @@ class CustomDrawer extends StatelessWidget {
       ),
       child: Container(
         color: Colors.white,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: [
             Container(
               color: Colors
@@ -60,48 +60,61 @@ class CustomDrawer extends StatelessWidget {
                 },
               ),
             ),
-            ListTile(
-              // leading: const Icon(Icons.directions_car),
-              title: const Text(
-                'Home',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+            GestureDetector(
               onTap: () {
-                // Handle Your Trips button press
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => HomeScreen(),
+                    builder: (context) => const HomeScreen(),
                   ),
                 );
               },
-            ),
-            ListTile(
-              // leading: const Icon(Icons.directions_car),
-              title: const Text(
-                'Your Trips',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
+                child: Text(
+                  'Home',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
+            ),
+            GestureDetector(
               onTap: () {
-                // Handle Your Trips button press
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => MyRidesHistory(),
                   ),
                 );
               },
-            ),
-            ListTile(
-              // leading: const Icon(Icons.payment),
-              title: const Text(
-                'Payment',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
+                child: Text(
+                  'Your Trips',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => RecentLocationsPage(),
+                  ),
+                );
+              },
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
+                child: Text(
+                  'Recent Locations',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            GestureDetector(
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -109,33 +122,35 @@ class CustomDrawer extends StatelessWidget {
                   ),
                 );
               },
-            ),
-            ListTile(
-              // leading: const Icon(Icons.notifications),
-              title: const Text(
-                'Notifications',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
+                child: Text(
+                  'Payment',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
+            ),
+            GestureDetector(
               onTap: () {
-                // Navigate to the notification settings screen
-                Navigator.push(
-                  context,
+                Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => NotificationSettingsScreen(),
+                    builder: (context) => NotificationsScreen(),
                   ),
                 );
               },
-            ),
-            ListTile(
-              // leading: const Icon(Icons.settings),
-              title: const Text(
-                'Settings',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
+                child: Text(
+                  'Notifications',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
+            ),
+            GestureDetector(
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -143,29 +158,44 @@ class CustomDrawer extends StatelessWidget {
                   ),
                 );
               },
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
+                child: Text(
+                  'Settings',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
             ),
-            ListTile(
-              // leading: const Icon(Icons.help),
-              title: const Text(
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
+              child: Text(
                 'Help',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onTap: () {
-                // Handle Help button press
-              },
             ),
-            const Expanded(
-              child: SizedBox(),
-            ),
-            ListTile(
-              // leading: const Icon(Icons.logout),
-              title: const Text(
-                'Logout',
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
+              child: Text(
+                'About',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: Colors.black54,
+                ),
+              ),
+            ),
+            GestureDetector(
+              // leading: const Icon(Icons.logout),
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
+                child: Text(
+                  'Logout',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red,
+                  ),
                 ),
               ),
               onTap: () {

@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:prototype/airbnb_list_page.dart';
 import 'package:prototype/airbnb_view_page.dart';
+import 'package:prototype/car_selection_indicator.dart';
 import 'package:prototype/custom_drawer.dart';
+import 'package:prototype/drivers_list.dart';
 import 'package:prototype/main_profile_page.dart';
 import 'package:prototype/map_view.dart';
 import 'package:prototype/notifications_screen.dart';
+import 'package:prototype/recent_locations.dart';
+import 'package:prototype/static_data.dart';
 import 'package:remixicon/remixicon.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -88,7 +93,7 @@ class HomeScreen extends StatelessWidget {
                   margin:
                       const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
                   child: const Text(
-                    'Hi, John',
+                    'Hi, Emmanuel',
                     style: TextStyle(
                       // fontWeight: FontWeight.bold,
                       fontSize: 16,
@@ -198,7 +203,14 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RecentLocationsPage(),
+                            ),
+                          );
+                        },
                         child: const Text(
                           'Manage',
                           style: TextStyle(
@@ -377,14 +389,20 @@ class HomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
-                        'Popular places nearby',
+                        'Available drivers',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                         ),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => NearbyDriversPage(),
+                            ),
+                          );
+                        },
                         child: const Text(
                           'View all',
                           style: TextStyle(
@@ -400,10 +418,122 @@ class HomeScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      PopularPlacesImageCard(),
-                      PopularPlacesImageCard(),
-                      PopularPlacesImageCard(),
-                      PopularPlacesImageCard(),
+                      carSelectionIndicator(
+                        context,
+                        "assets/car-three-seater.png",
+                        "Three Seater",
+                        "30 mins away",
+                        false,
+                      ),
+                      carSelectionIndicator(
+                        context,
+                        "assets/car-five-seater.png",
+                        "Five Seater",
+                        "10 mins away",
+                        false,
+                      ),
+                      carSelectionIndicator(
+                        context,
+                        "assets/car-seven-seater.png",
+                        "Seven Seater",
+                        "5 mins away",
+                        false,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => NearbyDriversPage(),
+                            ),
+                          );
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: CircleAvatar(
+                            backgroundColor: Colors.grey.shade200,
+                            radius: 30,
+                            child: const Center(
+                              child: Icon(
+                                size: 20,
+                                Icons.arrow_forward_outlined,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin:
+                      const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Popular places nearby',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  const AirbnbPropertyListPage(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'View all',
+                          style: TextStyle(
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      ...airbnbProperties.take(5).map((airbnb) {
+                        return PopularPlacesImageCard(
+                          propertyName: airbnb.title,
+                          propertyLocation: airbnb.location,
+                          image: airbnb.imageUrl,
+                          price: "\$${airbnb.price} / night",
+                        );
+                      }).toList(),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  const AirbnbPropertyListPage(),
+                            ),
+                          );
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: CircleAvatar(
+                            backgroundColor: Colors.grey.shade200,
+                            radius: 30,
+                            child: const Center(
+                              child: Icon(
+                                size: 20,
+                                Icons.arrow_forward_outlined,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -417,13 +547,30 @@ class HomeScreen extends StatelessWidget {
 }
 
 class PopularPlacesImageCard extends StatelessWidget {
+  String propertyName;
+  String propertyLocation;
+  String image;
+  String price;
+  PopularPlacesImageCard({
+    required this.propertyName,
+    required this.propertyLocation,
+    required this.image,
+    required this.price,
+    Key? key,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => AirbnbViewPage()),
+          MaterialPageRoute(
+              builder: (context) => AirbnbViewPage(
+                    airbnbName: propertyName,
+                    airbnbLocation: propertyLocation,
+                    airbnbPrice: price,
+                    airbnbImage: image,
+                  )),
         );
       },
       child: Card(
@@ -437,10 +584,9 @@ class PopularPlacesImageCard extends StatelessWidget {
             height: 180,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              image: const DecorationImage(
+              image: DecorationImage(
                 image: NetworkImage(
-                  'https://images.pexels'
-                  '.com/photos/1126728/pexels-photo-1126728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1und_image.jpg',
+                  image,
                 ),
                 fit: BoxFit.cover,
               ),
@@ -477,9 +623,9 @@ class PopularPlacesImageCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Airbnb Room', // Replace with actual place name
-                        style: TextStyle(
+                      Text(
+                        propertyName, // Replace with actual place name
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -494,8 +640,7 @@ class PopularPlacesImageCard extends StatelessWidget {
                               color: Colors.white, size: 16),
                           const SizedBox(width: 4),
                           Text(
-                            '123 Main Street'
-                                .trimRight(), // Replace with actual
+                            propertyLocation.trimRight(), // Replace with actual
                             textAlign: TextAlign.start,
                             style: const TextStyle(
                               color: Colors.white,

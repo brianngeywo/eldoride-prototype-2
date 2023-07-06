@@ -25,8 +25,13 @@ class PaymentScreen extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
-              leading: const Icon(Icons.credit_card, color: Colors.blue),
-              title: const Text('**** **** **** 1234'),
+              leading: const Icon(Icons.credit_card, color: Colors.black),
+              title: const Text(
+                '**** **** **** 1234',
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              ),
               subtitle: const Text('Visa'),
               trailing: const Icon(Icons.check_circle, color: Colors.blue),
               onTap: () {
@@ -39,7 +44,7 @@ class PaymentScreen extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
-              leading: const Icon(Icons.credit_card, color: Colors.blue),
+              leading: const Icon(Icons.credit_card, color: Colors.black),
               title: const Text('**** **** **** 5678'),
               subtitle: const Text('Mastercard'),
               trailing: const Icon(Icons.circle, color: Colors.grey),
@@ -92,7 +97,7 @@ class PaymentScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16.0),
             ListTile(
-              iconColor: Colors.blue,
+              iconColor: Colors.black,
               tileColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
@@ -106,7 +111,7 @@ class PaymentScreen extends StatelessWidget {
             ),
             const Divider(),
             ListTile(
-              iconColor: Colors.blue,
+              iconColor: Colors.black,
               tileColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
@@ -120,7 +125,7 @@ class PaymentScreen extends StatelessWidget {
             ),
             const Divider(),
             ListTile(
-              iconColor: Colors.blue,
+              iconColor: Colors.black,
               tileColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
@@ -134,7 +139,7 @@ class PaymentScreen extends StatelessWidget {
             ),
             const Divider(),
             ListTile(
-              iconColor: Colors.blue,
+              iconColor: Colors.black,
               tileColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
@@ -148,7 +153,7 @@ class PaymentScreen extends StatelessWidget {
             ),
             const Divider(),
             ListTile(
-              iconColor: Colors.blue,
+              iconColor: Colors.black,
               tileColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
@@ -162,7 +167,7 @@ class PaymentScreen extends StatelessWidget {
             ),
             const Divider(),
             ListTile(
-              iconColor: Colors.blue,
+              iconColor: Colors.black,
               tileColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),

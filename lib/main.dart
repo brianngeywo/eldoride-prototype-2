@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/homescreen.dart';
+import 'package:prototype/loading_screen.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const HomeScreen();
+    return LoadingScreen();
   }
 }
 
