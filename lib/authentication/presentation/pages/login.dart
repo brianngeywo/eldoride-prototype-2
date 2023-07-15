@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/sign_up_screen.dart';
+import 'package:prototype/authentication/presentation/pages/sign_up_screen.dart';
 import 'package:prototype/welcome_back_screen.dart';
 import 'package:remixicon/remixicon.dart';
 

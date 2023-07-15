@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/login.dart';
+import 'package:prototype/authentication/presentation/controller/signup_controller.dart';
+import 'package:prototype/authentication/presentation/pages/login.dart';
 import 'package:remixicon/remixicon.dart';
 
-import 'homescreen.dart';
+import '../../../homescreen.dart';
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+  SignUpScreen({super.key, this.signupController});
+
+  final SignupController? signupController;
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +71,8 @@ class SignUpScreen extends StatelessWidget {
                   ),
                   onPressed: () {
                     // Perform sign up logic
+                    signupController?.signUpWithEmailAndPassword(
+                        'email', 'password');
                     Navigator.push(
                         context,
                         MaterialPageRoute(
