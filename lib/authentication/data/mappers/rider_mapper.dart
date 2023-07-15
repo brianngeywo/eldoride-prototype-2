@@ -37,7 +37,7 @@ class RiderMapper {
     );
   }
 
-  RiderDataModel toEntity(RiderEntity entity) {
+  RiderDataModel fromEntity(RiderEntity entity) {
     return RiderDataModel(
       id: entity.id,
       name: entity.name,

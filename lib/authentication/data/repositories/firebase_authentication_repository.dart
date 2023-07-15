@@ -1,4 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:prototype/authentication/data/models/rider_data_model.dart';
+import 'package:prototype/authentication/data/remote/data_sources/firebase_auth_data_source.dart';
 import 'package:prototype/authentication/data/repositories/authentication_repository.dart';
 
 class FurebaseAuthenticationRepository implements AuthenticationRepository {
@@ -14,7 +16,9 @@ class FurebaseAuthenticationRepository implements AuthenticationRepository {
 
   @override
   Future<User?> signInWithEmailAndPassword(String email, String password) {
+    RiderDataModel? rider;
     // TODO: implement signInWithEmailAndPassword
+    RemoteDataSource().addRidertpFirestore(rider!);
     throw UnimplementedError();
   }
 

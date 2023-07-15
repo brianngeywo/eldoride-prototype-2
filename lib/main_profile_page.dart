@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:prototype/edit_profile_screen.dart';
 import 'package:prototype/main_settings_screen.dart';
 import 'package:prototype/my_rides_history.dart';
-import 'package:prototype/payment_screen.dart';
+import 'package:prototype/payments/presentation/pages/payment_screen.dart';
 import 'package:simple_icons/simple_icons.dart';
 
 class ProfilePage extends StatefulWidget {

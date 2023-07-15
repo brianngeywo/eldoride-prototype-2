@@ -4,7 +4,7 @@ import 'package:prototype/main_profile_page.dart';
 import 'package:prototype/main_settings_screen.dart';
 import 'package:prototype/my_rides_history.dart';
 import 'package:prototype/notifications_screen.dart';
-import 'package:prototype/payment_screen.dart';
+import 'package:prototype/payments/presentation/pages/payment_screen.dart';
 import 'package:prototype/recent_locations.dart';
 
 class CustomDrawer extends StatelessWidget {

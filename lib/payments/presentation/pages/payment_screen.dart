@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/add_payment_method.dart';
 import 'package:prototype/my_app_bar.dart';
+
+import 'add_payment_method.dart';
 
 class PaymentScreen extends StatelessWidget {
   @override

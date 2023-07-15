@@ -4,7 +4,7 @@ import 'package:prototype/edit_profile_screen.dart';
 import 'package:prototype/main_profile_page.dart';
 import 'package:prototype/my_app_bar.dart';
 import 'package:prototype/notification_settings_page.dart';
-import 'package:prototype/payment_screen.dart';
+import 'package:prototype/payments/presentation/pages/payment_screen.dart';
 
 import 'language_screen_settings.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/payment_screen.dart';
+import 'package:prototype/payments/presentation/pages/payment_screen.dart';
 
 class creditCardPaymentSection extends StatelessWidget {
   @override

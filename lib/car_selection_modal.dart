@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:prototype/car_selection_indicator.dart';
-import 'package:prototype/credit_card_payment_section.dart';
 import 'package:prototype/estimated_fare_widget.dart';
 import 'package:prototype/my_rides_history.dart';
+import 'package:prototype/payments/presentation/widgets/credit_card_payment_section.dart';
 import 'package:prototype/trip_confirmation_page.dart';
 
 void showCarSelectionModalBottomSheet(BuildContext context) {
