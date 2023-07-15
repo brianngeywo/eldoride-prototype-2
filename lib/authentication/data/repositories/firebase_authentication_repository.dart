@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:prototype/authentication/data/repositories/authentication_repository.dart';
 
-class SignupRepository implements AuthenticationRepository {
+class FurebaseAuthenticationRepository implements AuthenticationRepository {
   final FirebaseAuth _firebaseAuth;
 
-  SignupRepository(this._firebaseAuth);
+  FurebaseAuthenticationRepository(this._firebaseAuth);
 
   @override
   Future<User?> getCurrentUser() {

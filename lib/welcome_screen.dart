@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prototype/authentication/presentation/pages/login.dart';
-import 'package:prototype/sign_up_screen.dart';
+import 'package:prototype/authentication/presentation/pages/sign_up_screen.dart';
 
 class InitialWelcomeScreen extends StatelessWidget {
   const InitialWelcomeScreen({Key? key});
@@ -62,8 +62,7 @@ class InitialWelcomeScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const SignUpScreen()),
+                    MaterialPageRoute(builder: (context) => SignUpScreen()),
                   );
                 },
                 style: ElevatedButton.styleFrom(

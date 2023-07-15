@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:prototype/authentication/presentation/controller/sign_in_controller.dart';
 import 'package:prototype/authentication/presentation/pages/sign_up_screen.dart';
 import 'package:prototype/welcome_back_screen.dart';
 import 'package:remixicon/remixicon.dart';
 
 class LoginScreen extends StatelessWidget {
+  final SignInController? signInController;
+
+  LoginScreen({super.key, this.signInController});
+
+  TextEditingController? emailController;
+  TextEditingController? passwordController;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,11 +19,11 @@ class LoginScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
-            Center(
-              child: Container(
+            const Center(
+              child: SizedBox(
                 height: 200,
                 width: 200,
-                child: const Image(
+                child: Image(
                   image: AssetImage('assets/logo.png'),
                 ),
               ),
@@ -32,6 +40,11 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(height: 16.0),
             Center(
               child: TextFormField(
+                controller: emailController,
+                onChanged: (value) {
+                  // Perform login logic
+                  emailController?.text = value;
+                },
                 decoration: const InputDecoration(
                   labelText: 'Email',
                 ),
@@ -40,6 +53,11 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(height: 16.0),
             Center(
               child: TextFormField(
+                controller: passwordController,
+                onChanged: (value) {
+                  // Perform login logic
+                  passwordController?.text = value;
+                },
                 obscureText: true,
                 decoration: const InputDecoration(
                   labelText: 'Password',
@@ -57,6 +75,8 @@ class LoginScreen extends StatelessWidget {
                 ),
                 onPressed: () {
                   // Perform login logic
+                  signInController?.signInWithEmailAndPassword(
+                      emailController!.text, passwordController!.text);
                   Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -79,7 +99,7 @@ class LoginScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const SignUpScreen()));
+                              builder: (context) => SignUpScreen()));
                     },
                     child: const Text('Sign Up'),
                   ),

@@ -1,7 +1,7 @@
 import '../../domain/use_cases/signup_use_case.dart';
 
 class SignupController {
-  SignupUseCase _signupUseCase;
+  final SignupUseCase _signupUseCase;
 
   SignupController(this._signupUseCase);
 
