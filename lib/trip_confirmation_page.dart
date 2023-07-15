@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:prototype/car_arrived_screen.dart';
 import 'package:prototype/edit_ride.dart';
+import 'package:prototype/you_arrived_bottom_modal.dart';
 
 import 'my_rides_history.dart';
 
@@ -275,7 +277,32 @@ void showTripConfirmationDetailsModalBottomSheet(BuildContext context) {
                   children: [
                     // message driver
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) => AlertDialog(
+                            title: const Text('Message Driver'),
+                            content: const Text(
+                                'Are you sure you want to message the driver?'),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: const Text('Cancel'),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          DriverArrivedScreen()));
+                                },
+                                child: const Text('Message'),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
                       icon: const Icon(
                         Icons.mail_outline_rounded,
                         color: Colors.black,
@@ -284,7 +311,30 @@ void showTripConfirmationDetailsModalBottomSheet(BuildContext context) {
                     const SizedBox(width: 4.0),
                     // call driver
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        // showDialog(context: context, builder: (context) => CallDriverAlertDialog());
+                        showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                                  title: const Text('Call Driver'),
+                                  content: const Text(
+                                      'Are you sure you want to call the driver?'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: const Text('Cancel'),
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
+                                        showClientHasArrivedModal(context);
+                                      },
+                                      child: const Text('Call'),
+                                    ),
+                                  ],
+                                ));
+                      },
                       icon: const Icon(
                         Icons.call,
                         color: Colors.black,
@@ -304,7 +354,54 @@ void showTripConfirmationDetailsModalBottomSheet(BuildContext context) {
                             ),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                              backgroundColor: Colors.white,
+                              title: const Text('Cancel Ride'),
+                              content: const Text(
+                                  'Are you sure you want to cancel this ride?'),
+                              actions: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: TextButton(
+                                    onPressed: () {
+                                      // Handle the cancel action
+                                      Navigator.pop(context);
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.white,
+                                    ),
+                                    child: const Text(
+                                      'Return',
+                                      style: TextStyle(color: Colors.blue),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: TextButton(
+                                    onPressed: () {
+                                      // Handle the dismiss action
+                                      Navigator.pop(context);
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.black,
+                                      onPrimary: Colors.black,
+                                      side:
+                                          const BorderSide(color: Colors.black),
+                                    ),
+                                    child: const Text(
+                                      'Cancel Ride',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
                         child: const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
@@ -334,13 +431,9 @@ journeyStopsIndicator(String pickup, String destination) {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TravelIndicatorWidget(pickup, Colors.blue),
-        const Icon(Icons.more_vert, color: Colors.black54),
-        TravelIndicatorWidget("Pick up John", Colors.black),
-        const Icon(Icons.more_vert, color: Colors.black54),
-        TravelIndicatorWidget("Pick up Brian", Colors.black),
-        const Icon(Icons.more_vert, color: Colors.black54),
-        TravelIndicatorWidget(destination, Colors.blue),
+        TravelIndicatorWidget(pickup, Colors.blue, true),
+        SizedBox(height: 10),
+        TravelIndicatorWidget(destination, Colors.blue, false),
       ],
     ),
   );

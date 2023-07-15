@@ -37,7 +37,7 @@ class MainMapViewPage extends StatelessWidget {
                       onTap: () => Scaffold.of(context).openDrawer(),
                       child: const CircleAvatar(
                         backgroundColor: Colors.white,
-                        radius: 25,
+                        radius: 23,
                         child: Center(
                           child: Padding(
                             padding: EdgeInsets.all(8.0),

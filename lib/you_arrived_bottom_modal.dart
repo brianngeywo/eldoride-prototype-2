@@ -105,6 +105,22 @@ void showClientHasArrivedModal(
                 ),
                 const Divider(),
                 Container(
+                  width: double.infinity,
+                  color: Colors.blue,
+                  margin: const EdgeInsets.only(top: 10),
+                  child: const Center(
+                    child: Padding(
+                      padding: EdgeInsets.all(12.0),
+                      child: Text(
+                        "Make sure your belongings are not left behind!",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
                   margin: const EdgeInsets.symmetric(vertical: 10),
                   child: Text(
                     "Trip Summary".toUpperCase(),
@@ -197,46 +213,103 @@ void showClientHasArrivedModal(
                     ),
                   ),
                 ),
-                Container(
-                  margin: const EdgeInsets.symmetric(vertical: 10),
-                  child: Center(
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => MyRidesHistory(),
-                          ),
-                        );
-                      },
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(7),
-                          boxShadow: const [
-                            BoxShadow(
-                              color: Colors.black12,
-                              offset: Offset(0, 10),
-                              blurRadius: 30,
-                            ),
-                          ],
-                        ),
-                        child: const Center(
-                          child: Padding(
-                            padding: EdgeInsets.all(12.0),
-                            child: Text(
-                              'submit',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(vertical: 10),
+                          child: Center(
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => MyRidesHistory(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 20),
+                                decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(7),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      color: Colors.black12,
+                                      offset: Offset(0, 10),
+                                      blurRadius: 30,
+                                    ),
+                                  ],
+                                ),
+                                child: const Center(
+                                  child: Padding(
+                                    padding: EdgeInsets.all(12.0),
+                                    child: Text(
+                                      'submit Review',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
                           ),
                         ),
                       ),
-                    ),
+                      SizedBox(width: 10),
+                      Container(
+                        margin: const EdgeInsets.symmetric(vertical: 10),
+                        child: Center(
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => MyRidesHistory(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 20),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(7),
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 1,
+                                ),
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Colors.black12,
+                                    offset: Offset(0, 10),
+                                    blurRadius: 30,
+                                  ),
+                                ],
+                              ),
+                              child: const Center(
+                                child: Padding(
+                                  padding: EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'Close',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                    ],
                   ),
                 ),
               ],

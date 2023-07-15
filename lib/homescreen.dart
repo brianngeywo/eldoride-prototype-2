@@ -144,19 +144,29 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 //maps curved container placeholder
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  margin:
-                      const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
-                  decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.circular(20),
-                    image: const DecorationImage(
-                      image: AssetImage(
-                        "assets/maps.png",
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MainMapViewPage(),
                       ),
-                      fit: BoxFit.cover,
+                    );
+                  },
+                  child: Container(
+                    height: 200,
+                    width: double.infinity,
+                    margin:
+                        const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
+                    decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(20),
+                      image: const DecorationImage(
+                        image: AssetImage(
+                          "assets/maps.png",
+                        ),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
