@@ -1,6 +1,7 @@
+import 'package:prototype/payments/data/models/payments_abstract_class.dart';
 import 'package:prototype/payments/data/repositories/payments_repository.dart';
 
-class CreditCardPaymentsRepository implements PaymentsRepository {
+class CreditCardDataPaymentsRepository implements PaymentsDataRepository {
   @override
   Future<void> cancelPayment() {
     // TODO: implement cancelPayment
@@ -14,8 +15,20 @@ class CreditCardPaymentsRepository implements PaymentsRepository {
   }
 
   @override
-  Future<void> requestCashback() {
+  Future<void> requestRefund() {
     // TODO: implement requestCashback
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> addNewPaymentMethod() {
+    // TODO: implement addNewPaymentMethod
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<List<PaymentsAbstractClass>> fetchAllPaymentMethods() {
+    // TODO: implement fetchAllPaymentMethods
     throw UnimplementedError();
   }
 }

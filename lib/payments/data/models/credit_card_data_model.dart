@@ -1,4 +1,6 @@
-class CreditCardDataModel {
+import 'package:prototype/payments/data/models/payments_abstract_class.dart';
+
+class CreditCardDataModel implements PaymentsAbstractClass {
   String cardNumber;
   String cardHolderName;
   String cardExpirationDate;
@@ -32,4 +34,16 @@ class CreditCardDataModel {
     data['cardType'] = cardType;
     return data;
   }
+
+  @override
+  // TODO: implement accountBalance
+  String get accountBalance => throw UnimplementedError();
+
+  @override
+  // TODO: implement accountId
+  String get accountId => throw UnimplementedError();
+
+  @override
+  // TODO: implement accountName
+  String get accountName => throw UnimplementedError();
 }

@@ -1,14 +1,14 @@
 class MpesaEntity {
-  final String? phoneNumber;
-  final String? amount;
-  final String? reference;
-  final String? description;
+  final String phoneNumber;
+  final String amount;
+  final String reference;
+  final String description;
 
   MpesaEntity({
-    this.phoneNumber,
-    this.amount,
-    this.reference,
-    this.description,
+    required this.phoneNumber,
+    required this.amount,
+    required this.reference,
+    required this.description,
   });
 
   Map<String, dynamic> toMap() {

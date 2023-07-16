@@ -1,11 +1,14 @@
-import 'package:prototype/payments/data/repositories/payments_repository.dart';
-
 class PaymentsUseCase {
-  final PaymentsRepository repository;
+  Future<void> addNewPaymentMethod() async {}
 
-  PaymentsUseCase(this.repository);
-
-  Future<void> payForTrip() {
-    return repository.pay();
+  Future<List<Object>> getAllPaymentMethods() {
+    // TODO: implement getAllMpesaPaymentMethods
+    throw UnimplementedError();
   }
+
+  Future<void> payForTrip() async {}
+
+  Future<void> cancelPayment() async {}
+
+  Future<void> requestRefund() async {}
 }

@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:prototype/my_app_bar.dart';
 
+import '../controller/payments_controller.dart';
 import 'add_payment_method.dart';
 
 class PaymentScreen extends StatelessWidget {
+  final PaymentsController? paymentsController;
+
+  const PaymentScreen({super.key, this.paymentsController});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,6 +89,7 @@ class PaymentScreen extends StatelessWidget {
               ),
               onTap: () {
                 // Handle adding a new payment method
+                paymentsController!.payFortrip();
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => AddPaymentMethodPage()));
               },

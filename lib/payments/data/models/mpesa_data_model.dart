@@ -1,36 +1,38 @@
+import 'package:prototype/payments/data/models/payments_abstract_class.dart';
+
 import '../../domain/entities/mpesa_entity.dart';
 
-class MpesaDataModel {
-  String? phoneNumber;
-  String? amount;
-  String? reference;
-  String? transactionId;
-  String? transactionDate;
-  String? transactionStatus;
-  String? transactionStatusReason;
-  String? transactionType;
-  String? firstName;
-  String? middleName;
-  String? lastName;
-  String? orgAccountBalance;
-  String? thirdPartyReference;
-  String? msisdn;
+class MpesaDataModel implements PaymentsAbstractClass {
+  final String phoneNumber;
+  final String amount;
+  final String reference;
+  final String transactionId;
+  final String transactionDate;
+  final String transactionStatus;
+  final String transactionStatusReason;
+  final String transactionType;
+  final String firstName;
+  final String middleName;
+  final String lastName;
+  final String orgAccountBalance;
+  final String thirdPartyReference;
+  final String msisdn;
 
   MpesaDataModel({
-    this.phoneNumber,
-    this.amount,
-    this.reference,
-    this.transactionId,
-    this.transactionDate,
-    this.transactionStatus,
-    this.transactionStatusReason,
-    this.transactionType,
-    this.firstName,
-    this.middleName,
-    this.lastName,
-    this.orgAccountBalance,
-    this.thirdPartyReference,
-    this.msisdn,
+    required this.phoneNumber,
+    required this.amount,
+    required this.reference,
+    required this.transactionId,
+    required this.transactionDate,
+    required this.transactionStatus,
+    required this.transactionStatusReason,
+    required this.transactionType,
+    required this.firstName,
+    required this.middleName,
+    required this.lastName,
+    required this.orgAccountBalance,
+    required this.thirdPartyReference,
+    required this.msisdn,
   });
 
   MpesaEntity fromModel(MpesaDataModel model) {
@@ -60,4 +62,16 @@ class MpesaDataModel {
       msisdn: "",
     );
   }
+
+  @override
+  // TODO: implement accountBalance
+  String get accountBalance => throw UnimplementedError();
+
+  @override
+  // TODO: implement accountId
+  String get accountId => throw UnimplementedError();
+
+  @override
+  // TODO: implement accountName
+  String get accountName => throw UnimplementedError();
 }

@@ -1,11 +1,17 @@
 import 'package:prototype/payments/data/models/payments_abstract_class.dart';
 import 'package:prototype/payments/data/remote/data_sources/mpesa_remote_data_source.dart';
-import 'package:prototype/payments/data/repositories/payments_repository.dart';
+import 'package:prototype/payments/data/repositories/mpesa_payments_repository.dart';
+import 'package:prototype/payments/domain/repositories/payments_repository.dart';
 
-class MpesaPaymentsDataRepository implements PaymentsDataRepository {
+class MpesaPaymentsDomainRepository implements PaymentsDomainRepository {
+  final MpesaPaymentsDataRepository _mpesaPaymentsDataRepository;
+
+  MpesaPaymentsDomainRepository(this._mpesaPaymentsDataRepository);
+
   @override
   Future<void> pay() {
     // TODO: implement pay
+
     throw UnimplementedError();
   }
 
@@ -31,6 +37,7 @@ class MpesaPaymentsDataRepository implements PaymentsDataRepository {
   @override
   Future<List<PaymentsAbstractClass>> fetchAllPaymentMethods() {
     // TODO: implement fetchAllPaymentMethods
+    _mpesaPaymentsDataRepository.fetchAllPaymentMethods();
     throw UnimplementedError();
   }
 }

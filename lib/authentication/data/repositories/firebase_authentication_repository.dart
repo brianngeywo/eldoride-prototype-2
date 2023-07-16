@@ -18,7 +18,7 @@ class FurebaseAuthenticationRepository implements AuthenticationRepository {
   Future<User?> signInWithEmailAndPassword(String email, String password) {
     RiderDataModel? rider;
     // TODO: implement signInWithEmailAndPassword
-    RemoteDataSource().addRidertpFirestore(rider!);
+    RemoteAuthDataSource().addRidertpFirestore(rider!);
     throw UnimplementedError();
   }
 
