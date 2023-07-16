@@ -269,62 +269,33 @@ Widget mainTravelIndicator(String pickup, String destination) {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TravelIndicatorWidget(pickup, Colors.blue, true),
-        const SizedBox(height: 10.0),
-        TravelIndicatorWidget(destination, Colors.black, false),
+        TravelIndicatorWidget(pickup, Colors.blue),
+        const Icon(Icons.more_vert, color: Colors.black54),
+        TravelIndicatorWidget(destination, Colors.black),
       ],
     ),
   );
 }
 
-Widget TravelIndicatorWidget(String text, Color iconColor, bool isPickup) {
-  return Container(
-    padding: const EdgeInsets.all(12.0),
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(10.0),
-      color: Colors.grey[200],
-    ),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          isPickup ? "Pickup" : "Destination",
-          style: const TextStyle(
-            fontSize: 16.0,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Icon(Icons.location_on, color: iconColor),
-                  const SizedBox(width: 8.0),
-                  Text(
-                    "123 Address, Nairobi",
-                    style: TextStyle(),
-                  ),
-                ],
+Widget TravelIndicatorWidget(String text, Color iconColor) {
+  return Row(
+    children: [
+      Icon(Icons.location_on, color: iconColor),
+      const SizedBox(width: 8.0),
+      Expanded(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              text,
+              style: const TextStyle(
+                fontSize: 16.0,
               ),
-              const SizedBox(height: 8.0),
-              Row(
-                children: [
-                  Icon(Icons.access_time_outlined, color: iconColor),
-                  const SizedBox(width: 8.0),
-                  Text(
-                    "Today, 9:00 AM",
-                    style: TextStyle(
-                      fontSize: 16.0,
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
+            ),
+            const Text('9:00 AM', style: TextStyle(color: Colors.black54)),
+          ],
         ),
-      ],
-    ),
+      ),
+    ],
   );
 }

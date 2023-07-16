@@ -1,7 +1,7 @@
 import 'package:prototype/payments/data/models/credit_card_data_model.dart';
 import 'package:prototype/payments/domain/entities/credit_card.dart';
 
-class CreditCardMapper {
+class CreditCardToDataModelMapper {
   CreditCardEntity fromModel(CreditCardDataModel creditModel) {
     return CreditCardEntity(
       cardNumber: creditModel.cardNumber,

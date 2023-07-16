@@ -431,9 +431,13 @@ journeyStopsIndicator(String pickup, String destination) {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TravelIndicatorWidget(pickup, Colors.blue, true),
-        SizedBox(height: 10),
-        TravelIndicatorWidget(destination, Colors.blue, false),
+        TravelIndicatorWidget(pickup, Colors.blue),
+        const Icon(Icons.more_vert, color: Colors.black54),
+        TravelIndicatorWidget("Pick up John", Colors.black),
+        const Icon(Icons.more_vert, color: Colors.black54),
+        TravelIndicatorWidget("Pick up Brian", Colors.black),
+        const Icon(Icons.more_vert, color: Colors.black54),
+        TravelIndicatorWidget(destination, Colors.blue),
       ],
     ),
   );

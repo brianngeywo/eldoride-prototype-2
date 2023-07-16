@@ -1,8 +1,12 @@
-import 'package:prototype/payments/data/models/payments_abstract_class.dart';
+import 'package:prototype/payments/data/remote/data_sources/credit_card_payment_remote_data_source.dart';
 
 import '../../domain/repositories/payments_repository.dart';
 
 class CreditCardPaymentsRepository implements PaymentsRepository {
+  final CreditCardPaymentRemoteDataSource _creditCardPaymentRemoteDataSource;
+
+  CreditCardPaymentsRepository(this._creditCardPaymentRemoteDataSource);
+
   @override
   Future<void> cancelPayment() {
     // TODO: implement cancelPayment
@@ -12,6 +16,7 @@ class CreditCardPaymentsRepository implements PaymentsRepository {
   @override
   Future<void> pay() {
     // TODO: implement pay
+
     throw UnimplementedError();
   }
 
@@ -24,11 +29,12 @@ class CreditCardPaymentsRepository implements PaymentsRepository {
   @override
   Future<void> addNewPaymentMethod() {
     // TODO: implement addNewPaymentMethod
+    _creditCardPaymentRemoteDataSource.savePaymentMethod();
     throw UnimplementedError();
   }
 
   @override
-  Future<List<PaymentsAbstractClass>> fetchAllPaymentMethods() {
+  Future<List<Object>> fetchAllPaymentMethods() {
     // TODO: implement fetchAllPaymentMethods
     throw UnimplementedError();
   }

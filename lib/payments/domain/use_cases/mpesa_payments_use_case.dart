@@ -35,7 +35,7 @@ class MPesaPaymentsUseCase implements PaymentsUseCase {
   }
 
   @override
-  Future<List<MpesaEntity>> getAllPaymentMethods() {
+  Future<List<MPesaEntity>> getAllPaymentMethods() {
     // TODO: implement getAllPaymentMethods
     throw UnimplementedError();
   }

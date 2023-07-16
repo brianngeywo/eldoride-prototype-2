@@ -1,11 +1,11 @@
-class CreditCardDataModel {
+class CreditCardUIModel {
   String cardNumber;
   String cardHolderName;
   String cardExpirationDate;
   String cardCVV;
   String cardType;
 
-  CreditCardDataModel({
+  CreditCardUIModel({
     required this.cardNumber,
     required this.cardHolderName,
     required this.cardExpirationDate,
@@ -13,8 +13,8 @@ class CreditCardDataModel {
     required this.cardType,
   });
 
-  factory CreditCardDataModel.fromJson(Map<String, dynamic> json) {
-    return CreditCardDataModel(
+  factory CreditCardUIModel.fromJson(Map<String, dynamic> json) {
+    return CreditCardUIModel(
       cardNumber: json['cardNumber'],
       cardHolderName: json['cardHolderName'],
       cardExpirationDate: json['cardExpirationDate'],
