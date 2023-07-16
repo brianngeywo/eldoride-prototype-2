@@ -1,10 +1,10 @@
 import 'package:prototype/payments/domain/use_cases/payment_use_case.dart';
 
+import '../../data/repositories/credit_card_payments_repository.dart';
 import '../entities/credit_card.dart';
-import '../repositories/credit_card_payments_repository.dart';
 
 class CreditCardPaymentsUseCase implements PaymentsUseCase {
-  final CreditCardPaymentsDomainRepository _creditCardPaymentsRepository;
+  final CreditCardPaymentsRepository _creditCardPaymentsRepository;
 
   CreditCardPaymentsUseCase(this._creditCardPaymentsRepository);
 

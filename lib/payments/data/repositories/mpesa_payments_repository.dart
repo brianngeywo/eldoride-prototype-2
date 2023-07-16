@@ -1,8 +1,9 @@
 import 'package:prototype/payments/data/models/payments_abstract_class.dart';
 import 'package:prototype/payments/data/remote/data_sources/mpesa_remote_data_source.dart';
-import 'package:prototype/payments/data/repositories/payments_repository.dart';
 
-class MpesaPaymentsDataRepository implements PaymentsDataRepository {
+import '../../domain/repositories/payments_repository.dart';
+
+class MpesaPaymentsRepository implements PaymentsRepository {
   @override
   Future<void> pay() {
     // TODO: implement pay

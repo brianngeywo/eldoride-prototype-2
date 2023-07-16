@@ -1,10 +1,9 @@
-import 'package:prototype/payments/domain/repositories/mpesa_payments_repository.dart';
-
+import '../../data/repositories/mpesa_payments_repository.dart';
 import '../entities/mpesa_entity.dart';
 import 'payment_use_case.dart';
 
 class MPesaPaymentsUseCase implements PaymentsUseCase {
-  final MpesaPaymentsDomainRepository _mpesaPaymentsRepository;
+  final MpesaPaymentsRepository _mpesaPaymentsRepository;
 
   MPesaPaymentsUseCase(this._mpesaPaymentsRepository);
 

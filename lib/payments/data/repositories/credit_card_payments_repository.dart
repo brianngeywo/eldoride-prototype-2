@@ -1,7 +1,8 @@
 import 'package:prototype/payments/data/models/payments_abstract_class.dart';
-import 'package:prototype/payments/data/repositories/payments_repository.dart';
 
-class CreditCardDataPaymentsRepository implements PaymentsDataRepository {
+import '../../domain/repositories/payments_repository.dart';
+
+class CreditCardPaymentsRepository implements PaymentsRepository {
   @override
   Future<void> cancelPayment() {
     // TODO: implement cancelPayment

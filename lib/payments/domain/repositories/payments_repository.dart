@@ -1,7 +1,5 @@
-import 'package:prototype/payments/data/models/payments_abstract_class.dart';
-
-abstract class PaymentsDomainRepository {
-  Future<List<PaymentsAbstractClass>> fetchAllPaymentMethods();
+abstract class PaymentsRepository {
+  Future<List<Object>> fetchAllPaymentMethods();
 
   Future<void> addNewPaymentMethod() async {}
 
