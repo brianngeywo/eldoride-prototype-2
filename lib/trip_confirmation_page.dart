@@ -371,7 +371,7 @@ void showTripConfirmationDetailsModalBottomSheet(BuildContext context) {
                                       Navigator.pop(context);
                                     },
                                     style: ElevatedButton.styleFrom(
-                                      primary: Colors.white,
+                                      backgroundColor: Colors.white,
                                     ),
                                     child: const Text(
                                       'Return',
@@ -387,8 +387,7 @@ void showTripConfirmationDetailsModalBottomSheet(BuildContext context) {
                                       Navigator.pop(context);
                                     },
                                     style: ElevatedButton.styleFrom(
-                                      primary: Colors.black,
-                                      onPrimary: Colors.black,
+                                      backgroundColor: Colors.black,
                                       side:
                                           const BorderSide(color: Colors.black),
                                     ),
