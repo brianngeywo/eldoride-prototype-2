@@ -82,6 +82,24 @@ class CustomDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
+                    builder: (context) => PaymentScreen(),
+                  ),
+                );
+              },
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
+                child: Text(
+                  'Wallet',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
                     builder: (context) => MyRidesHistory(),
                   ),
                 );
@@ -89,7 +107,7 @@ class CustomDrawer extends StatelessWidget {
               child: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
                 child: Text(
-                  'Your Trips',
+                  'Your Trips History',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
@@ -107,25 +125,7 @@ class CustomDrawer extends StatelessWidget {
               child: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
                 child: Text(
-                  'Recent Locations',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => PaymentScreen(),
-                  ),
-                );
-              },
-              child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
-                child: Text(
-                  'Payment',
+                  'Saved Locations',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
@@ -144,6 +144,54 @@ class CustomDrawer extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
                 child: Text(
                   'Notifications',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
+                child: Text(
+                  'Promotions',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            // GestureDetector(
+            //   onTap: () {},
+            //   child: const Padding(
+            //     padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
+            //     child: Text(
+            //       'Refer and Earn',
+            //       style: TextStyle(
+            //         fontWeight: FontWeight.bold,
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            // GestureDetector(
+            //   onTap: () {},
+            //   child: const Padding(
+            //     padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
+            //     child: Text(
+            //       'Rewards',
+            //       style: TextStyle(
+            //         fontWeight: FontWeight.bold,
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            GestureDetector(
+              onTap: () {},
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
+                child: Text(
+                  'Emergency Contacts',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
@@ -183,6 +231,18 @@ class CustomDrawer extends StatelessWidget {
                 'About',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
+                child: Text(
+                  'Rate Us',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),

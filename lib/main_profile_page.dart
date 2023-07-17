@@ -75,14 +75,9 @@ class _ProfilePageState extends State<ProfilePage> {
                           TextButton(
                             onPressed: () {
                               // Handle "Edit Profile" button tap
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) => EditProfilePage(),
-                                ),
-                              );
                             },
                             child: const Text(
-                              'Edit Profile',
+                              '+254 712 345 678',
                               style: TextStyle(
                                 fontSize: 16.0,
                               ),
@@ -90,6 +85,27 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                         ],
                       ),
+                    ),
+                    ListTile(
+                      title: Text(
+                        'Edit Profile',
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+                      trailing: Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        size: 14.0,
+                        color: Colors.black,
+                      ),
+                      onTap: () {
+                        // Handle edit profile tap
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => EditProfilePage(),
+                          ),
+                        );
+                      },
                     ),
                     ListTile(
                       // leading: const Icon(Icons.directions_car),
@@ -130,7 +146,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         // Handle payment section tap
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (context) => PaymentScreen(),
+                            builder: (context) => const PaymentScreen(),
                           ),
                         );
                       },
