@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prototype/authentication/presentation/controller/sign_in_controller.dart';
 import 'package:prototype/authentication/presentation/pages/sign_up_screen.dart';
-import 'package:prototype/welcome_back_screen.dart';
+import 'package:prototype/authentication/presentation/pages/welcome_back_screen.dart';
 import 'package:remixicon/remixicon.dart';
 
 class LoginScreen extends StatelessWidget {

@@ -1,6 +1,5 @@
-import 'package:prototype/payments/data/remote/data_sources/credit_card_payment_remote_data_source.dart';
-
 import '../../domain/repositories/payments_repository.dart';
+import '../data_sources/credit_card_payment_remote_data_source.dart';
 
 class CreditCardPaymentsRepository implements PaymentsRepository {
   final CreditCardPaymentRemoteDataSource _creditCardPaymentRemoteDataSource;

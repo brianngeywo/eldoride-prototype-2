@@ -1,6 +1,5 @@
-import 'package:prototype/payments/data/remote/data_sources/mpesa_remote_data_source.dart';
-
 import '../../domain/repositories/payments_repository.dart';
+import '../data_sources/mpesa_remote_data_source.dart';
 
 class MpesaPaymentsRepository implements PaymentsRepository {
   final MPesaRemoteDataSource _mPesaRemoteDataSource;

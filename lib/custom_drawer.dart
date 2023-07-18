@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/homescreen.dart';
-import 'package:prototype/main_profile_page.dart';
 import 'package:prototype/main_settings_screen.dart';
-import 'package:prototype/my_rides_history.dart';
-import 'package:prototype/notifications_screen.dart';
+import 'package:prototype/notifications/presentation/pages/notifications_screen.dart';
 import 'package:prototype/payments/presentation/pages/payment_screen.dart';
-import 'package:prototype/recent_locations.dart';
+import 'package:prototype/ride_booking/presentation/pages/homescreen.dart';
+import 'package:prototype/ride_booking/presentation/pages/recent_locations.dart';
+import 'package:prototype/ride_history/presentation/pages/my_rides_history.dart';
+import 'package:prototype/user_profile/presentation/pages/main_profile_page.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
@@ -216,24 +216,24 @@ class CustomDrawer extends StatelessWidget {
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
-              child: Text(
-                'Help',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
-              child: Text(
-                'About',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
+            // const Padding(
+            //   padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
+            //   child: Text(
+            //     'Help',
+            //     style: TextStyle(
+            //       fontWeight: FontWeight.bold,
+            //     ),
+            //   ),
+            // ),
+            // const Padding(
+            //   padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
+            //   child: Text(
+            //     'About',
+            //     style: TextStyle(
+            //       fontWeight: FontWeight.bold,
+            //     ),
+            //   ),
+            // ),
             GestureDetector(
               onTap: () {},
               child: const Padding(

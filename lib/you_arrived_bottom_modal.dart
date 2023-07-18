@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/my_rides_history.dart';
+import 'package:prototype/ride_history/presentation/pages/my_rides_history.dart';
 
 void showClientHasArrivedModal(
   BuildContext context,

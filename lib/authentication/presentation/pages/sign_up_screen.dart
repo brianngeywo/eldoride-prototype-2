@@ -3,7 +3,7 @@ import 'package:prototype/authentication/presentation/controller/signup_controll
 import 'package:prototype/authentication/presentation/pages/login.dart';
 import 'package:remixicon/remixicon.dart';
 
-import '../../../homescreen.dart';
+import '../../../ride_booking/presentation/pages/homescreen.dart';
 
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({super.key, this.signupController});

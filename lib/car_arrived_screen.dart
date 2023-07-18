@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/map_view.dart';
+import 'package:prototype/ride_booking/presentation/pages/map_view.dart';
 
 class DriverArrivedScreen extends StatelessWidget {
   @override

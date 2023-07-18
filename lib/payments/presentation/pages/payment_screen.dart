@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:prototype/my_app_bar.dart';
 
-import '../controller/payments_controller.dart';
+// import 'package:mpesa_flutter_plugin/mpesa_flutter_plugin.dart';
+
+import '../controllers/payments_controller.dart';
 import 'add_payment_method.dart';
 
 class PaymentScreen extends StatelessWidget {
   final PaymentsController? paymentsController;
 
-  const PaymentScreen({super.key, this.paymentsController});
+  const PaymentScreen({Key? key, this.paymentsController}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: myAppBar(Colors.white, "Payments", context),
+      appBar: myAppBar(Colors.white, "Wallet", context),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListView(
-          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
               'Payment Methods',
@@ -31,55 +32,33 @@ class PaymentScreen extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
-              leading: const Icon(Icons.credit_card, color: Colors.black),
+              leading: const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Icon(Icons.phone_android, color: Colors.green),
+              ),
               title: const Text(
-                '**** **** **** 1234',
+                'M-Pesa Mobile payment',
                 style: TextStyle(
                   color: Colors.black,
                 ),
               ),
-              subtitle: const Text('Visa'),
+              subtitle: const Text('+254 712 345 678'),
               trailing: const Icon(Icons.check_circle, color: Colors.blue),
               onTap: () {
-                // Handle selecting this payment method
+                // initiateMpesaPayment(context);
               },
             ),
-            SizedBox(height: 16.0),
-            ListTile(
-              tileColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              leading: const Icon(Icons.credit_card, color: Colors.black),
-              title: const Text('**** **** **** 5678'),
-              subtitle: const Text('Mastercard'),
-              trailing: const Icon(Icons.circle, color: Colors.grey),
-              onTap: () {
-                // Handle selecting this payment method
-              },
-            ),
-            // SizedBox(height: 16.0),
-            // CreditCardWidget(
-            //   cardNumber: '**** **** **** 1234', // Example card number
-            //   cardHolderName: 'Emmanuel Korir', // Example card holder name
-            //   expiryDate: '12/25', // Example expiry date
-            //   cvv: '***', // Example CVV
-            // ),
-            // SizedBox(height: 16.0),
-            // CreditCardWidget(
-            //   cardNumber: '**** **** **** 1234', // Example card number
-            //   cardHolderName: 'Emmanuel Korir', // Example card holder name
-            //   expiryDate: '12/25', // Example expiry date
-            //   cvv: '***', // Example CVV
-            // ),
             const SizedBox(height: 16.0),
             const Divider(),
             ListTile(
               textColor: Colors.blue,
               iconColor: Colors.blue,
-              leading: const Icon(
-                Icons.add,
-                weight: 20,
+              leading: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: const Icon(
+                  Icons.add,
+                  weight: 20,
+                ),
               ),
               title: const Text(
                 'Add New Payment Method',
@@ -88,10 +67,11 @@ class PaymentScreen extends StatelessWidget {
                 ),
               ),
               onTap: () {
-                // Handle adding a new payment method
-                paymentsController!.payFortrip();
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => AddPaymentMethodPage()));
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const AddPaymentMethodPage(),
+                  ),
+                );
               },
             ),
             const Divider(),
@@ -109,9 +89,12 @@ class PaymentScreen extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
-              leading: const Icon(Icons.history),
-              title: const Text('UberX - July 1, 2023'),
-              subtitle: const Text('\$25.50'),
+              leading: const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Icon(Icons.history),
+              ),
+              title: const Text('M-Pesa - July 1, 2023'),
+              subtitle: const Text('Kshs 1050.50'),
               onTap: () {
                 // Handle viewing the details of this transaction
               },
@@ -123,72 +106,83 @@ class PaymentScreen extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
-              leading: const Icon(Icons.history),
-              title: const Text('UberPool - June 28, 2023'),
-              subtitle: const Text('\$12.75'),
+              leading: const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Icon(Icons.history),
+              ),
+              title: const Text('M-Pesa - June 28, 2023'),
+              subtitle: const Text('Kshs 750.75'),
               onTap: () {
                 // Handle viewing the details of this transaction
               },
             ),
             const Divider(),
-            ListTile(
-              iconColor: Colors.black,
-              tileColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              leading: const Icon(Icons.history),
-              title: const Text('UberPool - June 28, 2023'),
-              subtitle: const Text('\$12.75'),
-              onTap: () {
-                // Handle viewing the details of this transaction
-              },
-            ),
-            const Divider(),
-            ListTile(
-              iconColor: Colors.black,
-              tileColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              leading: const Icon(Icons.history),
-              title: const Text('UberPool - June 28, 2023'),
-              subtitle: const Text('\$12.75'),
-              onTap: () {
-                // Handle viewing the details of this transaction
-              },
-            ),
-            const Divider(),
-            ListTile(
-              iconColor: Colors.black,
-              tileColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              leading: const Icon(Icons.history),
-              title: const Text('UberPool - June 28, 2023'),
-              subtitle: const Text('\$12.75'),
-              onTap: () {
-                // Handle viewing the details of this transaction
-              },
-            ),
-            const Divider(),
-            ListTile(
-              iconColor: Colors.black,
-              tileColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              leading: const Icon(Icons.history),
-              title: const Text('UberPool - June 28, 2023'),
-              subtitle: const Text('\$12.75'),
-              onTap: () {
-                // Handle viewing the details of this transaction
-              },
-            ),
+            // Add more billing history items he
           ],
         ),
       ),
     );
   }
+
+// void initiateMpesaPayment(BuildContext context) async {
+//   try {
+//     MpesaFlutterPlugin.setConsumerKey("YOUR_CONSUMER_KEY");
+//     MpesaFlutterPlugin.setConsumerSecret("YOUR_CONSUMER_SECRET");
+//
+//     dynamic transactionInitialisation = await MpesaFlutterPlugin.initializeMpesaSTKPush(
+//       businessShortCode: "YOUR_BUSINESS_SHORT_CODE",
+//       transactionType: "CustomerPayBillOnline",
+//       amount: 100.0,
+//       partyA: "CUSTOMER_PHONE_NUMBER",
+//       partyB: "YOUR_BUSINESS_SHORT_CODE",
+//       callBackURL: "YOUR_CALLBACK_URL",
+//       accountReference: "YOUR_ACCOUNT_REFERENCE",
+//       phoneNumber: "CUSTOMER_PHONE_NUMBER",
+//       baseUri: "YOUR_BASE_URI",
+//       transactionDesc: "YOUR_TRANSACTION_DESCRIPTION",
+//       passKey: "YOUR_PASSKEY",
+//     );
+//
+//     if (transactionInitialisation is Map) {
+//       dynamic customerMessage = transactionInitialisation['CustomerMessage'];
+//       if (customerMessage != null) {
+//         showDialog(
+//           context: context,
+//           builder: (context) {
+//             return AlertDialog(
+//               title: const Text('Payment Initiated'),
+//               content: Text(customerMessage),
+//               actions: [
+//                 TextButton(
+//                   child: const Text('OK'),
+//                   onPressed: () {
+//                     Navigator.pop(context);
+//                   },
+//                 ),
+//               ],
+//             );
+//           },
+//         );
+//       }
+//     }
+//   } catch (e) {
+//     showDialog(
+//       context: context,
+//       builder: (context) {
+//         return AlertDialog(
+//           title: const Text('Error'),
+//           content: Text('An error occurred during payment initiation: $e'),
+//           actions: [
+//             TextButton(
+//               child: const Text('OK'),
+//               onPressed: () {
+//                 Navigator.pop(context);
+//               },
+//             ),
+//           ],
+//         );
+//       },
+//     );
+//   }
+// }
 }

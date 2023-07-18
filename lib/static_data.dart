@@ -1,8 +1,9 @@
 import 'dart:math';
 
-import 'package:prototype/airbnb_list_page.dart';
-import 'package:prototype/drivers_list.dart';
-import 'package:prototype/recent_locations.dart';
+import 'package:prototype/driver_booking/presentation/pages/drivers_list.dart';
+import 'package:prototype/ride_booking/presentation/pages/recent_locations.dart';
+
+import 'airbnbs/presentation/pages/airbnb_list_page.dart';
 
 final List<String> airbnbImageList = [
   "https://images.pexels.com/photos/1428348/pexels-photo-1428348"

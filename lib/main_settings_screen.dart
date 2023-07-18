@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/change_password_screen.dart';
-import 'package:prototype/edit_profile_screen.dart';
-import 'package:prototype/main_profile_page.dart';
 import 'package:prototype/my_app_bar.dart';
-import 'package:prototype/notification_settings_page.dart';
 import 'package:prototype/payments/presentation/pages/payment_screen.dart';
+import 'package:prototype/user_profile/presentation/pages/change_password_screen.dart';
+import 'package:prototype/user_profile/presentation/pages/edit_profile_screen.dart';
+import 'package:prototype/user_profile/presentation/pages/main_profile_page.dart';
 
-import 'language_screen_settings.dart';
+import 'language_selection/presentation/pages/language_screen_settings.dart';
+import 'notifications/presentation/pages/notification_settings_page.dart';
 
 class MainSettingsScreen extends StatelessWidget {
   @override
@@ -196,32 +196,58 @@ class MainSettingsScreen extends StatelessWidget {
               );
             },
           ),
-          // ListTile(
-          //   leading: const Icon(
-          //     Icons.privacy_tip,
-          //     color: Colors.black,
-          //   ),
-          //   title: const Text(
-          //     'Privacy Settings',
-          //     style: TextStyle(
-          //       color: Colors.black,
-          //     ),
-          //   ),
-          //   trailing: const Icon(
-          //     Icons.arrow_forward_ios_rounded,
-          //     size: 14.0,
-          //     color: Colors.black,
-          //   ),
-          //   onTap: () {
-          //     // Navigate to the privacy settings screen
-          //     Navigator.push(
-          //       context,
-          //       MaterialPageRoute(
-          //         builder: (context) => PrivacySettingsScreen(),
-          //       ),
-          //     );
-          //   },
-          // ),
+          ListTile(
+            leading: const Icon(
+              Icons.library_books,
+              color: Colors.black,
+            ),
+            title: const Text(
+              'Terms & Conditions',
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            ),
+            trailing: const Icon(
+              Icons.arrow_forward_ios_rounded,
+              size: 14.0,
+              color: Colors.black,
+            ),
+            onTap: () {
+              // Navigate to the privacy settings screen
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PrivacySettingsScreen(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.assignment,
+              color: Colors.black,
+            ),
+            title: const Text(
+              'Privacy Policy',
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            ),
+            trailing: const Icon(
+              Icons.arrow_forward_ios_rounded,
+              size: 14.0,
+              color: Colors.black,
+            ),
+            onTap: () {
+              // Navigate to the privacy settings screen
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PrivacySettingsScreen(),
+                ),
+              );
+            },
+          ),
           // Add more list tiles for additional settings
         ],
       ),
