@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:prototype/animation_constants.dart';
 import 'package:prototype/authentication/presentation/controller/signup_controller.dart';
 import 'package:prototype/authentication/presentation/pages/login.dart';
 import 'package:remixicon/remixicon.dart';
 
-import '../../../ride_booking/presentation/pages/homescreen.dart';
+import '../../../homescreen.dart';
 
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({super.key, this.signupController});
@@ -66,17 +67,12 @@ class SignUpScreen extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     primary: Colors.black,
                     onPrimary: Colors.white,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 48, vertical: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 10),
                   ),
                   onPressed: () {
                     // Perform sign up logic
-                    signupController?.signUpWithEmailAndPassword(
-                        'email', 'password');
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const HomeScreen()));
+                    signupController?.signUpWithEmailAndPassword('email', 'password');
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
                   },
                   child: const Text('Sign Up'),
                 ),
@@ -88,8 +84,9 @@ class SignUpScreen extends StatelessWidget {
                     TextButton(
                       onPressed: () {
                         // Navigate to the login screen
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => LoginScreen()));
+                        Navigator.of(context).push(
+                          CustomTransitions().rightToLeftSlideTransitionPageBuilder(LoginScreen(), context),
+                        );
                       },
                       child: const Text('Log In'),
                     ),

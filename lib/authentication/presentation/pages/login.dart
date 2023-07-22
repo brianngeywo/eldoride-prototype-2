@@ -4,6 +4,8 @@ import 'package:prototype/authentication/presentation/pages/sign_up_screen.dart'
 import 'package:prototype/authentication/presentation/pages/welcome_back_screen.dart';
 import 'package:remixicon/remixicon.dart';
 
+import '../../../animation_constants.dart';
+
 class LoginScreen extends StatelessWidget {
   final SignInController? signInController;
 
@@ -70,13 +72,11 @@ class LoginScreen extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   primary: Colors.black,
                   onPrimary: Colors.white,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 48, vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 10),
                 ),
                 onPressed: () {
                   // Perform login logic
-                  signInController?.signInWithEmailAndPassword(
-                      emailController!.text, passwordController!.text);
+                  signInController?.signInWithEmailAndPassword(emailController!.text, passwordController!.text);
                   Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -97,9 +97,7 @@ class LoginScreen extends StatelessWidget {
                     onPressed: () {
                       // Navigate to the sign-up screen
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => SignUpScreen()));
+                          context, CustomTransitions().leftToRightSlideTransitionPageBuilder(SignUpScreen(), context));
                     },
                     child: const Text('Sign Up'),
                   ),

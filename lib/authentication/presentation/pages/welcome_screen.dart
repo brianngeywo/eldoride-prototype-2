@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:prototype/animation_constants.dart';
 import 'package:prototype/authentication/presentation/pages/login.dart';
 import 'package:prototype/authentication/presentation/pages/sign_up_screen.dart';
 
 class InitialWelcomeScreen extends StatelessWidget {
-  const InitialWelcomeScreen({super.key});
+  InitialWelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +16,10 @@ class InitialWelcomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
+              const SizedBox(
                 height: 200,
                 width: 200,
-                child: const Image(
+                child: Image(
                   image: AssetImage('assets/app-icons/playstore.png'),
                 ),
               ),
@@ -43,14 +44,13 @@ class InitialWelcomeScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => LoginScreen()),
+                    CustomTransitions().sizeTransitionPageRouteBuilder(LoginScreen(), context),
                   );
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Colors.black,
                   onPrimary: Colors.white,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 48, vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 10),
                 ),
                 child: const Text(
                   'Log in',
@@ -62,12 +62,11 @@ class InitialWelcomeScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => SignUpScreen()),
+                    CustomTransitions().slideTransitionPageRouteBuilder(SignUpScreen(), context),
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 48, vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 10),
                 ),
                 child: const Text(
                   'Register',

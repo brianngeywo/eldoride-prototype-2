@@ -86,8 +86,7 @@ void showTripConfirmationDetailsModalBottomSheet(BuildContext context) {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Icon(Icons.location_on,
-                                  color: Colors.black54, size: 14),
+                              Icon(Icons.location_on, color: Colors.black54, size: 14),
                               Text(
                                 '10 mins',
                                 style: TextStyle(
@@ -282,8 +281,7 @@ void showTripConfirmationDetailsModalBottomSheet(BuildContext context) {
                           context: context,
                           builder: (context) => AlertDialog(
                             title: const Text('Message Driver'),
-                            content: const Text(
-                                'Are you sure you want to message the driver?'),
+                            content: const Text('Are you sure you want to message the driver?'),
                             actions: [
                               TextButton(
                                 onPressed: () {
@@ -293,9 +291,8 @@ void showTripConfirmationDetailsModalBottomSheet(BuildContext context) {
                               ),
                               TextButton(
                                 onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          DriverArrivedScreen()));
+                                  Navigator.of(context)
+                                      .push(MaterialPageRoute(builder: (context) => DriverArrivedScreen()));
                                 },
                                 child: const Text('Message'),
                               ),
@@ -317,8 +314,7 @@ void showTripConfirmationDetailsModalBottomSheet(BuildContext context) {
                             context: context,
                             builder: (context) => AlertDialog(
                                   title: const Text('Call Driver'),
-                                  content: const Text(
-                                      'Are you sure you want to call the driver?'),
+                                  content: const Text('Are you sure you want to call the driver?'),
                                   actions: [
                                     TextButton(
                                       onPressed: () {
@@ -344,13 +340,11 @@ void showTripConfirmationDetailsModalBottomSheet(BuildContext context) {
                     Expanded(
                       child: TextButton(
                         style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.grey[200]),
+                          backgroundColor: MaterialStateProperty.all(Colors.grey[200]),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0),
-                              side: BorderSide(
-                                  color: Colors.black.withOpacity(0.3)),
+                              side: BorderSide(color: Colors.black.withOpacity(0.3)),
                             ),
                           ),
                         ),
@@ -360,8 +354,7 @@ void showTripConfirmationDetailsModalBottomSheet(BuildContext context) {
                             builder: (context) => AlertDialog(
                               backgroundColor: Colors.white,
                               title: const Text('Cancel Ride'),
-                              content: const Text(
-                                  'Are you sure you want to cancel this ride?'),
+                              content: const Text('Are you sure you want to cancel this ride?'),
                               actions: [
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
@@ -388,8 +381,7 @@ void showTripConfirmationDetailsModalBottomSheet(BuildContext context) {
                                     },
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: Colors.black,
-                                      side:
-                                          const BorderSide(color: Colors.black),
+                                      side: const BorderSide(color: Colors.black),
                                     ),
                                     child: const Text(
                                       'Cancel Ride',

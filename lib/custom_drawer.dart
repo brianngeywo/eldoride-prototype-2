@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:prototype/animation_constants.dart';
+import 'package:prototype/emergency_contacts_screen.dart';
 import 'package:prototype/main_settings_screen.dart';
 import 'package:prototype/notifications/presentation/pages/notifications_screen.dart';
 import 'package:prototype/payments/presentation/pages/payment_screen.dart';
-import 'package:prototype/ride_booking/presentation/pages/homescreen.dart';
+import 'package:prototype/promotions.dart';
+import 'package:prototype/homescreen.dart';
 import 'package:prototype/ride_booking/presentation/pages/recent_locations.dart';
 import 'package:prototype/ride_history/presentation/pages/my_rides_history.dart';
 import 'package:prototype/user_profile/presentation/pages/main_profile_page.dart';
@@ -24,8 +27,7 @@ class CustomDrawer extends StatelessWidget {
         child: ListView(
           children: [
             Container(
-              color: Colors
-                  .white, // Set the background color of the header to white
+              color: Colors.white, // Set the background color of the header to white
               child: UserAccountsDrawerHeader(
                 accountName: const Text(
                   'Emmanuel Korir',
@@ -62,6 +64,7 @@ class CustomDrawer extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
+                Navigator.of(context).pop();
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => const HomeScreen(),
@@ -80,6 +83,7 @@ class CustomDrawer extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
+                Navigator.of(context).pop();
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => PaymentScreen(),
@@ -98,6 +102,7 @@ class CustomDrawer extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
+                Navigator.of(context).pop();
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => MyRidesHistory(),
@@ -116,6 +121,7 @@ class CustomDrawer extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
+                Navigator.of(context).pop();
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => RecentLocationsPage(),
@@ -134,6 +140,7 @@ class CustomDrawer extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
+                Navigator.of(context).pop();
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => NotificationsScreen(),
@@ -151,7 +158,14 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => PromotionsScreen(),
+                  ),
+                );
+              },
               child: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
                 child: Text(
@@ -187,7 +201,11 @@ class CustomDrawer extends StatelessWidget {
             //   ),
             // ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context)
+                    .push(CustomTransitions().slideTransitionPageRouteBuilder(EmergencyContactsScreen(), context));
+              },
               child: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
                 child: Text(
@@ -200,6 +218,7 @@ class CustomDrawer extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
+                Navigator.of(context).pop();
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => MainSettingsScreen(),

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:prototype/animation_constants.dart';
 
 import 'authentication/presentation/pages/welcome_screen.dart';
 
@@ -18,7 +19,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
     Timer(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const InitialWelcomeScreen()),
+        CustomTransitions().rightToLeftSlideTransitionPageBuilder(InitialWelcomeScreen(), context),
       );
     });
   }

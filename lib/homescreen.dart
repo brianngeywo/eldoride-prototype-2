@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prototype/airbnbs/presentation/pages/airbnb_view_page.dart';
+import 'package:prototype/animation_constants.dart';
 import 'package:prototype/custom_drawer.dart';
 import 'package:prototype/driver_booking/presentation/pages/drivers_list.dart';
 import 'package:prototype/notifications/presentation/pages/notifications_screen.dart';
@@ -8,9 +9,9 @@ import 'package:prototype/ride_booking/presentation/pages/recent_locations.dart'
 import 'package:prototype/static_data.dart';
 import 'package:remixicon/remixicon.dart';
 
-import '../../../airbnbs/presentation/pages/airbnb_list_page.dart';
-import '../../../user_profile/presentation/pages/main_profile_page.dart';
-import 'map_view.dart';
+import 'airbnbs/presentation/pages/airbnb_list_page.dart';
+import 'user_profile/presentation/pages/main_profile_page.dart';
+import 'ride_booking/presentation/pages/map_view.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -52,8 +53,7 @@ class HomeScreen extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
-                  margin:
-                      const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
+                  margin: const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -85,14 +85,12 @@ class HomeScreen extends StatelessWidget {
                               ),
                             );
                           },
-                          child: const Icon(Icons.notifications_none_outlined,
-                              size: 30)),
+                          child: const Icon(Icons.notifications_none_outlined, size: 30)),
                     ],
                   ),
                 ),
                 Container(
-                  margin:
-                      const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
+                  margin: const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
                   child: const Text(
                     'Hi, Emmanuel',
                     style: TextStyle(
@@ -102,8 +100,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin:
-                      const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
+                  margin: const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
                   child: const Text(
                     'Where do you want to go \ntoday?',
                     style: TextStyle(
@@ -113,8 +110,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin:
-                      const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
+                  margin: const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -157,8 +153,7 @@ class HomeScreen extends StatelessWidget {
                   child: Container(
                     height: 200,
                     width: double.infinity,
-                    margin:
-                        const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
+                    margin: const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
                     decoration: BoxDecoration(
                       color: Colors.grey[300],
                       borderRadius: BorderRadius.circular(20),
@@ -172,8 +167,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin:
-                      const EdgeInsets.only(left: 8.0, top: 4.0, right: 8.0),
+                  margin: const EdgeInsets.only(left: 8.0, top: 4.0, right: 8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -264,8 +258,7 @@ class HomeScreen extends StatelessWidget {
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
                                       "Home",
@@ -315,8 +308,7 @@ class HomeScreen extends StatelessWidget {
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
                                       "Office",
@@ -366,8 +358,7 @@ class HomeScreen extends StatelessWidget {
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
                                       "Restaurant",
@@ -394,8 +385,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin:
-                      const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
+                  margin: const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -477,8 +467,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin:
-                      const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
+                  margin: const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -493,8 +482,7 @@ class HomeScreen extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) =>
-                                  const AirbnbPropertyListPage(),
+                              builder: (context) => const AirbnbPropertyListPage(),
                             ),
                           );
                         },
@@ -518,15 +506,14 @@ class HomeScreen extends StatelessWidget {
                           propertyName: airbnb.title,
                           propertyLocation: airbnb.location,
                           image: airbnb.imageUrl,
-                          price: "\$${airbnb.price} / night",
+                          price: "${airbnb.price}",
                         );
                       }).toList(),
                       GestureDetector(
                         onTap: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) =>
-                                  const AirbnbPropertyListPage(),
+                              builder: (context) => const AirbnbPropertyListPage(),
                             ),
                           );
                         },
@@ -575,15 +562,15 @@ class PopularPlacesImageCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => AirbnbViewPage(
-                    airbnbName: propertyName,
-                    airbnbLocation: propertyLocation,
-                    airbnbPrice: price,
-                    airbnbImage: image,
-                  )),
+        Navigator.of(context).push(
+          CustomTransitions().bottomToUpSlideTransitionPageRouteBuilder(
+              AirbnbViewPage(
+                airbnbName: propertyName,
+                airbnbLocation: propertyLocation,
+                airbnbImage: image,
+                airbnbPrice: price,
+              ),
+              context),
         );
       },
       child: Card(
@@ -610,8 +597,7 @@ class PopularPlacesImageCard extends StatelessWidget {
               children: [
                 Container(
                   width: double.infinity,
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     gradient: LinearGradient(
@@ -649,8 +635,7 @@ class PopularPlacesImageCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Icon(Icons.location_on,
-                              color: Colors.white, size: 16),
+                          const Icon(Icons.location_on, color: Colors.white, size: 16),
                           const SizedBox(width: 4),
                           Text(
                             propertyLocation.trimRight(), // Replace with actual

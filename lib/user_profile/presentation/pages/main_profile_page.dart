@@ -5,6 +5,8 @@ import 'package:prototype/ride_history/presentation/pages/my_rides_history.dart'
 import 'package:prototype/user_profile/presentation/pages/edit_profile_screen.dart';
 import 'package:simple_icons/simple_icons.dart';
 
+import '../../../help_page.dart';
+
 class ProfilePage extends StatefulWidget {
   @override
   State<ProfilePage> createState() => _ProfilePageState();
@@ -87,13 +89,13 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
                     ListTile(
-                      title: Text(
+                      title: const Text(
                         'Edit Profile',
                         style: TextStyle(
                           color: Colors.black,
                         ),
                       ),
-                      trailing: Icon(
+                      trailing: const Icon(
                         Icons.arrow_forward_ios_rounded,
                         size: 14.0,
                         color: Colors.black,
@@ -189,6 +191,11 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                       onTap: () {
                         // Handle help section tap
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const HelpPage(),
+                          ),
+                        );
                       },
                     ),
                     ListTile(
@@ -206,6 +213,11 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                       onTap: () {
                         // Handle about section tap
+                        showAboutDialog(
+                          applicationName: "Eldoride",
+                          applicationVersion: "Verison 1.0.0",
+                          context: context,
+                        );
                       },
                     ),
                     // ListTile(
@@ -220,7 +232,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     // ),
                     ListTile(
                       title: const Text(
-                        'Social Media',
+                        'Linked Accounts',
                         style: TextStyle(
                           // fontSize: 20,
                           fontWeight: FontWeight.bold,

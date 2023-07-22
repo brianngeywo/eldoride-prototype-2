@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import '../../../ride_booking/presentation/pages/homescreen.dart';
+import '../../../homescreen.dart';
 
 class WelcomeBackScreen extends StatefulWidget {
   final String userName;

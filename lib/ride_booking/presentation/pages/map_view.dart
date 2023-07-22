@@ -25,14 +25,26 @@ class MainMapViewPage extends StatelessWidget {
                   ),
                 )),
           ),
+          const Positioned(
+            bottom: 200,
+            right: 30,
+            child: CircleAvatar(
+              backgroundColor: Colors.white,
+              radius: 23,
+              child: Icon(
+                Icons.gps_fixed_rounded,
+                color: Colors.black,
+                size: 32,
+              ),
+            ),
+          ),
           Positioned(
-              top: 50,
-              left: 10,
-              right: 10,
+              bottom: 130,
+              left: 30,
+              right: 30,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  //make this button a circle button
                   Builder(builder: (context) {
                     return GestureDetector(
                       onTap: () => Scaffold.of(context).openDrawer(),
@@ -44,9 +56,9 @@ class MainMapViewPage extends StatelessWidget {
                             padding: EdgeInsets.all(8.0),
                             child: Center(
                               child: Icon(
-                                Remix.menu_4_fill,
+                                Remix.menu_fill,
                                 color: Colors.black,
-                                size: 30,
+                                size: 27,
                               ),
                             ),
                           ),
@@ -77,7 +89,7 @@ class MainMapViewPage extends StatelessWidget {
                 ],
               )),
           Positioned(
-            bottom: 20,
+            bottom: 50,
             left: 0,
             right: 0,
             //search text field
@@ -103,8 +115,7 @@ class MainMapViewPage extends StatelessWidget {
                     Expanded(
                       child: GestureDetector(
                         onTap: () {
-                          showDropOffAndPickupTextFieldModalBottomSheet(
-                              context);
+                          showDropOffAndPickupTextFieldModalBottomSheet(context);
                         },
                         child: const TextField(
                           enabled: false,

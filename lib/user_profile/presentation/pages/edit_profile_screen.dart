@@ -4,6 +4,8 @@ import 'package:prototype/my_app_bar.dart';
 import 'main_profile_page.dart';
 
 class EditProfilePage extends StatefulWidget {
+  const EditProfilePage({super.key});
+
   @override
   _EditProfilePageState createState() => _EditProfilePageState();
 }
@@ -13,9 +15,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
   String lastName = 'Korir';
   String phoneNumber = '+254 712 345 678';
   String email = 'kiprop@email.com';
-
-  // String password = '';
-  // DateTime selectedDate = DateTime.now();
   String gender = 'Male';
 
   @override
@@ -63,9 +62,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 );
               }),
             ),
-
             const SizedBox(height: 16.0),
-
             Container(
               height: 50,
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -215,7 +212,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 },
               ),
             ),
-
             const SizedBox(height: 24.0),
             Center(
               child: GestureDetector(
