@@ -13,6 +13,13 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    _navigateToLoginScreen(BuildContext context) {
+      Navigator.pushReplacement(
+        context,
+        CustomTransitions().rightToLeftSlideTransitionPageBuilder(LoginScreen(), context),
+      );
+    }
+
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -84,9 +91,7 @@ class SignUpScreen extends StatelessWidget {
                     TextButton(
                       onPressed: () {
                         // Navigate to the login screen
-                        Navigator.of(context).push(
-                          CustomTransitions().rightToLeftSlideTransitionPageBuilder(LoginScreen(), context),
-                        );
+                        _navigateToLoginScreen(context);
                       },
                       child: const Text('Log In'),
                     ),

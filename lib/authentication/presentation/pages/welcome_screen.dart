@@ -4,10 +4,24 @@ import 'package:prototype/authentication/presentation/pages/login.dart';
 import 'package:prototype/authentication/presentation/pages/sign_up_screen.dart';
 
 class InitialWelcomeScreen extends StatelessWidget {
-  InitialWelcomeScreen({super.key});
+  const InitialWelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    void _navigateToLoginScreen(BuildContext context) {
+      Navigator.pushReplacement(
+        context,
+        CustomTransitions().rightToLeftSlideTransitionPageBuilder(LoginScreen(), context),
+      );
+    }
+
+    void _navigateToSignUpScreen(BuildContext context) {
+      Navigator.pushReplacement(
+        context,
+        CustomTransitions().rightToLeftSlideTransitionPageBuilder(SignUpScreen(), context),
+      );
+    }
+
     return Scaffold(
       body: Container(
         color: Colors.white,
@@ -42,10 +56,7 @@ class InitialWelcomeScreen extends StatelessWidget {
               const SizedBox(height: 22),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    CustomTransitions().sizeTransitionPageRouteBuilder(LoginScreen(), context),
-                  );
+                  _navigateToLoginScreen(context);
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Colors.black,
@@ -60,10 +71,7 @@ class InitialWelcomeScreen extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    CustomTransitions().slideTransitionPageRouteBuilder(SignUpScreen(), context),
-                  );
+                  _navigateToSignUpScreen(context);
                 },
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 10),

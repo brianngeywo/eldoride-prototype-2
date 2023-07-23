@@ -558,20 +558,24 @@ class PopularPlacesImageCard extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
+  void _navigateToAirbnbViewPage(BuildContext context) {
+    Navigator.of(context).push(
+      CustomTransitions().bottomToUpSlideTransitionPageRouteBuilder(
+          AirbnbViewPage(
+            airbnbName: propertyName,
+            airbnbLocation: propertyLocation,
+            airbnbImage: image,
+            airbnbPrice: price,
+          ),
+          context),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).push(
-          CustomTransitions().bottomToUpSlideTransitionPageRouteBuilder(
-              AirbnbViewPage(
-                airbnbName: propertyName,
-                airbnbLocation: propertyLocation,
-                airbnbImage: image,
-                airbnbPrice: price,
-              ),
-              context),
-        );
+        _navigateToAirbnbViewPage(context);
       },
       child: Card(
         elevation: 2,
