@@ -19,7 +19,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
     Timer(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
         context,
-        CustomTransitions().rightToLeftSlideTransitionPageBuilder(InitialWelcomeScreen(), context),
+        CustomTransitions().rightToLeftSlideTransitionPageBuilder(InitialWelcomeScreen()),
       );
     });
   }

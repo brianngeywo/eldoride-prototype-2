@@ -6,22 +6,20 @@ import 'package:prototype/authentication/presentation/pages/sign_up_screen.dart'
 class InitialWelcomeScreen extends StatelessWidget {
   const InitialWelcomeScreen({super.key});
 
+  void _navigateToLoginScreen(BuildContext context) {
+    Navigator.of(context).pushReplacement(
+      CustomTransitions().rightToLeftSlideTransitionPageBuilder(LoginScreen()),
+    );
+  }
+
+  void _navigateToSignUpScreen(BuildContext context) {
+    Navigator.of(context).pushReplacement(
+      CustomTransitions().rightToLeftSlideTransitionPageBuilder(SignUpScreen()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    void _navigateToLoginScreen(BuildContext context) {
-      Navigator.pushReplacement(
-        context,
-        CustomTransitions().rightToLeftSlideTransitionPageBuilder(LoginScreen(), context),
-      );
-    }
-
-    void _navigateToSignUpScreen(BuildContext context) {
-      Navigator.pushReplacement(
-        context,
-        CustomTransitions().rightToLeftSlideTransitionPageBuilder(SignUpScreen(), context),
-      );
-    }
-
     return Scaffold(
       body: Container(
         color: Colors.white,

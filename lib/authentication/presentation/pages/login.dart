@@ -19,7 +19,7 @@ class LoginScreen extends StatelessWidget {
     _navigateToSignUpScreen(BuildContext context) {
       Navigator.pushReplacement(
         context,
-        CustomTransitions().leftToRightSlideTransitionPageBuilder(SignUpScreen(), context),
+        CustomTransitions().leftToRightSlideTransitionPageBuilder(SignUpScreen()),
       );
     }
 

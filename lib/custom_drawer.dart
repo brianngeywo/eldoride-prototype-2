@@ -204,7 +204,7 @@ class CustomDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context)
-                    .push(CustomTransitions().slideTransitionPageRouteBuilder(EmergencyContactsScreen(), context));
+                    .push(CustomTransitions().slideTransitionPageRouteBuilder(EmergencyContactsScreen()));
               },
               child: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),

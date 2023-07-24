@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
 class CustomTransitions {
-  PageRouteBuilder bottomToUpSlideTransitionPageRouteBuilder(Widget page, BuildContext context) {
+  var duration = const Duration(milliseconds: 1000);
+
+  PageRouteBuilder bottomToUpSlideTransitionPageRouteBuilder(Widget page) {
     return PageRouteBuilder(
+      transitionDuration: duration,
       pageBuilder: (context, animation, secondaryAnimation) => page,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = Offset(0.0, 1.0);
         const end = Offset.zero;
-        const curve = Curves.decelerate;
-        const duration = Duration(milliseconds: 1500);
+        const curve = Curves.easeInOut;
 
         final tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
         var curvedAnimation = CurvedAnimation(parent: animation, curve: curve);
-        var scaleAnimation = Tween(begin: begin, end: end).animate(
-          CurvedAnimation(parent: animation, curve: curve, reverseCurve: curve),
-        );
+
         return SlideTransition(
           position: tween.animate(curvedAnimation),
           child: child,
@@ -23,20 +23,18 @@ class CustomTransitions {
     );
   }
 
-  PageRouteBuilder rightToLeftSlideTransitionPageBuilder(Widget page, BuildContext context) {
+  PageRouteBuilder rightToLeftSlideTransitionPageBuilder(Widget page) {
     return PageRouteBuilder(
+      transitionDuration: duration,
       pageBuilder: (context, animation, secondaryAnimation) => page,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = Offset(1.0, 0.0);
         const end = Offset.zero;
         const curve = Curves.easeInOut;
-        const duration = Duration(milliseconds: 1500);
 
         final tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
         var curvedAnimation = CurvedAnimation(parent: animation, curve: curve);
-        var scaleAnimation = Tween(begin: begin, end: end).animate(
-          CurvedAnimation(parent: animation, curve: curve, reverseCurve: curve),
-        );
+
         return SlideTransition(
           position: tween.animate(curvedAnimation),
           child: child,
@@ -45,20 +43,18 @@ class CustomTransitions {
     );
   }
 
-  PageRouteBuilder leftToRightSlideTransitionPageBuilder(Widget page, BuildContext context) {
+  PageRouteBuilder leftToRightSlideTransitionPageBuilder(Widget page) {
     return PageRouteBuilder(
+      transitionDuration: duration,
       pageBuilder: (context, animation, secondaryAnimation) => page,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = Offset(-1.0, 0.0);
         const end = Offset.zero;
         const curve = Curves.easeInOut;
-        const duration = Duration(milliseconds: 1500);
 
         final tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
         var curvedAnimation = CurvedAnimation(parent: animation, curve: curve);
-        var scaleAnimation = Tween(begin: begin, end: end).animate(
-          CurvedAnimation(parent: animation, curve: curve, reverseCurve: curve),
-        );
+
         return SlideTransition(
           position: tween.animate(curvedAnimation),
           child: child,
@@ -67,20 +63,18 @@ class CustomTransitions {
     );
   }
 
-  PageRouteBuilder topToBottomSlideTransitionPageBuilder(Widget page, BuildContext context) {
+  PageRouteBuilder topToBottomSlideTransitionPageBuilder(Widget page) {
     return PageRouteBuilder(
+      transitionDuration: duration,
       pageBuilder: (context, animation, secondaryAnimation) => page,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = Offset(0.0, -1.0);
         const end = Offset.zero;
         const curve = Curves.easeInOut;
-        const duration = Duration(milliseconds: 1500);
 
         final tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
         var curvedAnimation = CurvedAnimation(parent: animation, curve: curve);
-        var scaleAnimation = Tween(begin: begin, end: end).animate(
-          CurvedAnimation(parent: animation, curve: curve, reverseCurve: curve),
-        );
+
         return SlideTransition(
           position: tween.animate(curvedAnimation),
           child: child,
@@ -89,17 +83,15 @@ class CustomTransitions {
     );
   }
 
-  PageRouteBuilder scaleTransitionPageRouteBuilder(Widget page, BuildContext context) {
+  PageRouteBuilder scaleTransitionPageRouteBuilder(Widget page) {
     return PageRouteBuilder(
+      transitionDuration: duration,
       pageBuilder: (context, animation, secondaryAnimation) => page,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = 0.0;
         const end = 1.0;
         const curve = Curves.easeInOut;
-        const duration = Duration(milliseconds: 1500);
 
-        final tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-        var curvedAnimation = CurvedAnimation(parent: animation, curve: curve);
         var scaleAnimation = Tween(begin: begin, end: end).animate(
           CurvedAnimation(parent: animation, curve: curve, reverseCurve: curve),
         );
@@ -111,14 +103,14 @@ class CustomTransitions {
     );
   }
 
-  PageRouteBuilder fadeTransitionPageRouteBuilder(Widget page, BuildContext context) {
+  PageRouteBuilder fadeTransitionPageRouteBuilder(Widget page) {
     return PageRouteBuilder(
+      transitionDuration: duration,
       pageBuilder: (context, animation, secondaryAnimation) => page,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = 0.0;
         const end = 1.0;
         const curve = Curves.easeInOut;
-        const duration = Duration(milliseconds: 1500);
 
         final tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
         var curvedAnimation = CurvedAnimation(parent: animation, curve: curve);
@@ -133,20 +125,18 @@ class CustomTransitions {
     );
   }
 
-  PageRouteBuilder rotateTransitionPageRouteBuilder(Widget page, BuildContext context) {
+  PageRouteBuilder rotateTransitionPageRouteBuilder(Widget page) {
     return PageRouteBuilder(
+      transitionDuration: duration,
       pageBuilder: (context, animation, secondaryAnimation) => page,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = 0.0;
         const end = 1.0;
         const curve = Curves.easeInOut;
-        const duration = Duration(milliseconds: 1500);
 
         final tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
         var curvedAnimation = CurvedAnimation(parent: animation, curve: curve);
-        var scaleAnimation = Tween(begin: begin, end: end).animate(
-          CurvedAnimation(parent: animation, curve: curve, reverseCurve: curve),
-        );
+
         return RotationTransition(
           turns: tween.animate(curvedAnimation),
           child: child,
@@ -155,20 +145,18 @@ class CustomTransitions {
     );
   }
 
-  PageRouteBuilder sizeTransitionPageRouteBuilder(Widget page, BuildContext context) {
+  PageRouteBuilder sizeTransitionPageRouteBuilder(Widget page) {
     return PageRouteBuilder(
+      transitionDuration: duration,
       pageBuilder: (context, animation, secondaryAnimation) => page,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = 0.0;
         const end = 1.0;
         const curve = Curves.easeInOut;
-        const duration = Duration(milliseconds: 1500);
 
         final tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
         var curvedAnimation = CurvedAnimation(parent: animation, curve: curve);
-        var scaleAnimation = Tween(begin: begin, end: end).animate(
-          CurvedAnimation(parent: animation, curve: curve, reverseCurve: curve),
-        );
+
         return SizeTransition(
           sizeFactor: tween.animate(curvedAnimation),
           child: child,
@@ -177,8 +165,9 @@ class CustomTransitions {
     );
   }
 
-  PageRouteBuilder slideTransitionPageRouteBuilder(Widget page, BuildContext context) {
+  PageRouteBuilder slideTransitionPageRouteBuilder(Widget page) {
     return PageRouteBuilder(
+      transitionDuration: duration,
       pageBuilder: (context, animation, secondaryAnimation) => page,
       transitionsBuilder: (context, animation, secondaryAnimation, child) => SlideTransition(
         position: Tween<Offset>(
