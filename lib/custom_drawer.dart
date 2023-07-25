@@ -86,7 +86,7 @@ class CustomDrawer extends StatelessWidget {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => PaymentScreen(),
+                    builder: (context) => const PaymentScreen(),
                   ),
                 );
               },
@@ -162,7 +162,7 @@ class CustomDrawer extends StatelessWidget {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => PromotionsScreen(),
+                    builder: (context) => const PromotionsScreen(),
                   ),
                 );
               },
@@ -203,8 +203,8 @@ class CustomDrawer extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.of(context)
-                    .push(CustomTransitions().slideTransitionPageRouteBuilder(EmergencyContactsScreen()));
+                Navigator.of(context).push(CustomTransitions()
+                    .slideTransitionPageRouteBuilder(const EmergencyContactsScreen()));
               },
               child: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),

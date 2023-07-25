@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomTransitions {
-  var duration = const Duration(milliseconds: 1000);
+  var duration = const Duration(milliseconds: 700);
 
   PageRouteBuilder bottomToUpSlideTransitionPageRouteBuilder(Widget page) {
     return PageRouteBuilder(

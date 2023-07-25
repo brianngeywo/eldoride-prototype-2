@@ -16,6 +16,31 @@ import 'ride_booking/presentation/pages/map_view.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
+  void navigateToAirbnbsListPage(BuildContext context) {
+    Navigator.of(context).push(
+      CustomTransitions().bottomToUpSlideTransitionPageRouteBuilder(
+        const AirbnbPropertyListPage(),
+      ),
+    );
+  }
+
+  void navigateToDriversPage(BuildContext context) {
+    Navigator.of(context).push(
+      CustomTransitions().bottomToUpSlideTransitionPageRouteBuilder(
+        NearbyDriversPage(),
+      ),
+    );
+  }
+
+  void navigateToSavedLocationsPage(BuildContext context) {
+    Navigator.push(
+      context,
+      CustomTransitions().bottomToUpSlideTransitionPageRouteBuilder(
+        RecentLocationsPage(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,8 +87,8 @@ class HomeScreen extends StatelessWidget {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(
-                                builder: (context) => ProfilePage(),
+                              CustomTransitions().bottomToUpSlideTransitionPageRouteBuilder(
+                                ProfilePage(),
                               ),
                             );
                           },
@@ -80,8 +105,8 @@ class HomeScreen extends StatelessWidget {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(
-                                builder: (context) => NotificationsScreen(),
+                              CustomTransitions().rightToLeftSlideTransitionPageBuilder(
+                                NotificationsScreen(),
                               ),
                             );
                           },
@@ -125,8 +150,8 @@ class HomeScreen extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                              builder: (context) => const MainMapViewPage(),
+                            CustomTransitions().rightToLeftSlideTransitionPageBuilder(
+                              const MainMapViewPage(),
                             ),
                           );
                         },
@@ -145,8 +170,8 @@ class HomeScreen extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => const MainMapViewPage(),
+                      CustomTransitions().rightToLeftSlideTransitionPageBuilder(
+                        const MainMapViewPage(),
                       ),
                     );
                   },
@@ -179,8 +204,8 @@ class HomeScreen extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                              builder: (context) => const MainMapViewPage(),
+                            CustomTransitions().rightToLeftSlideTransitionPageBuilder(
+                              const MainMapViewPage(),
                             ),
                           );
                         },
@@ -209,12 +234,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => RecentLocationsPage(),
-                            ),
-                          );
+                          navigateToSavedLocationsPage(context);
                         },
                         child: const Text(
                           'Manage',
@@ -263,11 +283,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => NearbyDriversPage(),
-                            ),
-                          );
+                          navigateToDriversPage(context);
                         },
                         child: const Text(
                           'View all',
@@ -345,11 +361,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const AirbnbPropertyListPage(),
-                            ),
-                          );
+                          navigateToAirbnbsListPage(context);
                         },
                         child: const Text(
                           'View all',

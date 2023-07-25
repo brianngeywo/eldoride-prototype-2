@@ -25,6 +25,22 @@ class MainMapViewPage extends StatelessWidget {
                   ),
                 )),
           ),
+          Positioned(
+            top: 50,
+            right: 30,
+            child: GestureDetector(
+              onTap: () => Navigator.of(context).pop(),
+              child: const CircleAvatar(
+                backgroundColor: Colors.white,
+                radius: 23,
+                child: Icon(
+                  Icons.arrow_back_ios_rounded,
+                  color: Colors.black,
+                  size: 32,
+                ),
+              ),
+            ),
+          ),
           const Positioned(
             bottom: 200,
             right: 30,
@@ -56,7 +72,7 @@ class MainMapViewPage extends StatelessWidget {
                             padding: EdgeInsets.all(8.0),
                             child: Center(
                               child: Icon(
-                                Remix.menu_fill,
+                                Remix.menu_4_fill,
                                 color: Colors.black,
                                 size: 27,
                               ),
