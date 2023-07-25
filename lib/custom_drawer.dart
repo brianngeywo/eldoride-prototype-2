@@ -14,7 +14,10 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      width: MediaQuery.of(context).size.width * 0.75,
+      width: MediaQuery
+          .of(context)
+          .size
+          .width * 0.75,
       backgroundColor: Colors.white,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
@@ -43,8 +46,8 @@ class CustomDrawer extends StatelessWidget {
                 currentAccountPicture: const CircleAvatar(
                   backgroundImage: NetworkImage(
                     'https://images.pexels'
-                    '.com/photos/91224/pexels-photo-91224'
-                    '.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                        '.com/photos/91224/pexels-photo-91224'
+                        '.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                   ), // Replace
                   // with your own profile image
                 ),
@@ -203,8 +206,11 @@ class CustomDrawer extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.of(context).push(CustomTransitions()
-                    .slideTransitionPageRouteBuilder(const EmergencyContactsScreen()));
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const EmergencyContactsScreen(),
+                  ),
+                );
               },
               child: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
