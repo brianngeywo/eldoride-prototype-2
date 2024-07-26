@@ -16,7 +16,8 @@ class SignUpScreen extends StatelessWidget {
     _navigateToLoginScreen(BuildContext context) {
       Navigator.pushReplacement(
         context,
-        CustomTransitions().rightToLeftSlideTransitionPageBuilder(LoginScreen()),
+        CustomTransitions()
+            .rightToLeftSlideTransitionPageBuilder(LoginScreen()),
       );
     }
 
@@ -72,14 +73,19 @@ class SignUpScreen extends StatelessWidget {
                 const SizedBox(height: 24.0),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.black,
-                    onPrimary: Colors.white,
-                    padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 10),
+                    foregroundColor: Colors.white,
+                    backgroundColor: Colors.black,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 48, vertical: 10),
                   ),
                   onPressed: () {
                     // Perform sign up logic
-                    signupController?.signUpWithEmailAndPassword('email', 'password');
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+                    signupController?.signUpWithEmailAndPassword(
+                        'email', 'password');
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomeScreen()));
                   },
                   child: const Text('Sign Up'),
                 ),
@@ -111,8 +117,8 @@ class SignUpScreen extends StatelessWidget {
                   children: [
                     ElevatedButton.icon(
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.red,
-                        onPrimary: Colors.white,
+                        foregroundColor: Colors.white,
+                        backgroundColor: Colors.red,
                       ),
                       onPressed: () {
                         // Perform Google sign up logic
@@ -123,8 +129,8 @@ class SignUpScreen extends StatelessWidget {
                     const SizedBox(width: 16.0),
                     ElevatedButton.icon(
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.blue,
-                        onPrimary: Colors.white,
+                        foregroundColor: Colors.white,
+                        backgroundColor: Colors.blue,
                       ),
                       onPressed: () {
                         // Perform Facebook sign up logic

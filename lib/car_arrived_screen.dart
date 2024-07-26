@@ -39,8 +39,8 @@ class DriverArrivedScreen extends StatelessWidget {
                 // Handle the "Call Driver" button action
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                onPrimary: Colors.black,
+                foregroundColor: Colors.black,
+                backgroundColor: Colors.white,
                 side: const BorderSide(color: Colors.black),
               ),
               child: const Padding(
@@ -62,8 +62,8 @@ class DriverArrivedScreen extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                onPrimary: Colors.black,
+                foregroundColor: Colors.black,
+                backgroundColor: Colors.white,
                 side: const BorderSide(color: Colors.black),
               ),
               child: const Padding(

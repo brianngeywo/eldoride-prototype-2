@@ -19,7 +19,8 @@ class LoginScreen extends StatelessWidget {
     _navigateToSignUpScreen(BuildContext context) {
       Navigator.pushReplacement(
         context,
-        CustomTransitions().leftToRightSlideTransitionPageBuilder(SignUpScreen()),
+        CustomTransitions()
+            .leftToRightSlideTransitionPageBuilder(SignUpScreen()),
       );
     }
 
@@ -77,13 +78,15 @@ class LoginScreen extends StatelessWidget {
             Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
-                  onPrimary: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 10),
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.black,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 48, vertical: 10),
                 ),
                 onPressed: () {
                   // Perform login logic
-                  signInController?.signInWithEmailAndPassword(emailController!.text, passwordController!.text);
+                  signInController?.signInWithEmailAndPassword(
+                      emailController!.text, passwordController!.text);
                   Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -124,7 +127,7 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.red.shade800,
+                      backgroundColor: Colors.red.shade800,
                     ),
                     onPressed: () {
                       // Perform Google login logic
@@ -138,7 +141,7 @@ class LoginScreen extends StatelessWidget {
                   const SizedBox(width: 16.0),
                   ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.blue.shade800,
+                      backgroundColor: Colors.blue.shade800,
                     ),
                     onPressed: () {
                       // Perform Facebook login logic

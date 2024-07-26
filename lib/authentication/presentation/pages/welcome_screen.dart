@@ -57,9 +57,10 @@ class InitialWelcomeScreen extends StatelessWidget {
                   _navigateToLoginScreen(context);
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
-                  onPrimary: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 10),
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.black,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 48, vertical: 10),
                 ),
                 child: const Text(
                   'Log in',
@@ -72,7 +73,8 @@ class InitialWelcomeScreen extends StatelessWidget {
                   _navigateToSignUpScreen(context);
                 },
                 style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 10),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 48, vertical: 10),
                 ),
                 child: const Text(
                   'Register',
